@@ -16,6 +16,11 @@ import compare from '../components/compare'
 import termsandcondition from '../components/termsandcondition'
 import success from '../components/success'
 import purchase from '../components/purchase'
+import buyback from '../components/buyback'
+import newtwowheeler from '../components/newtwowheeler'
+import finance from '../components/finance'
+import loanagainstvehicle from '../components/loanagainstvehicle'
+
 
 Vue.use(VueRouter)
 
@@ -39,6 +44,10 @@ const routes = [
   { path: '/model-by-displacement/:id', component: displacement },
   { path: '/compare', component: compare },
   { path: '/termsandcondition', component: termsandcondition },
+  { path: '/finance', component: finance },
+  { path: '/buyback', component: buyback },
+  { path: '/loan-against-vehicle', component: loanagainstvehicle },
+  { path: '/new-2-wheelers-loan', component: newtwowheeler},
 
 ]
 

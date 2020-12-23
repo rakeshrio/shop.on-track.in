@@ -1,5 +1,6 @@
 <template>
-<div class="col-md-12 col-12 m-0 p-0">
+<div class="col-md-12 col-12 m-0 p-0" style="font-family:gilroyf
+  ">
   <div class="col-md-12 sikander m-auto p-0">
     <div class="col-md-12 col-12 m-0 p-0" style="background:#F8F8F8">
       <div class="row col-md-9  p-0 m-auto   py-5" >
@@ -7,18 +8,18 @@
       <div class="col-md-4 col-12" style="justify-content:left">
         <h1 class="cal text-left">Experience the mobile app</h1>
           <div class="col-md-12 d-flex m-0 p-0" style="justify-content:left">
-            <img
-              alt="pitstop playstore"
-              src="https://cube.getpitstop.com/assets/img/playstore.png"
-               width="auto" height="50px"
-            />
+            <a href="https://play.google.com/store/apps/details?id=com.ontrack.ontrack" target="_blank"> <img style="cursor:pointer"
+                  alt="pitstop playstore"
+                  src="https://cube.getpitstop.com/assets/img/playstore.png"
+                  width="auto" height="50px"
+                /></a>
             <!-- <img class="mt-1 pl-1" src="https://on-track.in/wp-content/uploads/2020/10/appstore_3x_986b88218b6de481d2ddb4b9087c8ee5.png" alt="" width="auto" height="40px"> -->
           </div>
       </div>
-      <div class="col-md-3 col-12 text-left">
+      <!-- <div class="col-md-3 col-12 text-left">
         <h1 class="cal">BUY SAFE, PAY EASY</h1>
          <p class="dfh" style="font-size:14px; font-weight:500; letter-spacing:0.5px; color:#999999"><span><i class="fa fa-calendar" aria-hidden="true"></i></span> Credit card EMI : Now pay in easy installments </p>
-      </div>
+      </div> -->
       <div class="col-md-2 col-12" style="justify-content:center">
         <h1 class="cal">FOLLOW US</h1>
             <a href="https://www.facebook.com/ontrackBikes/">  <img src="https://cdn1.iconfinder.com/data/icons/social-media-2285/512/Colored_Facebook3_svg-128.png" alt="" width="auto" height="30px" class="pr-2"></a>
@@ -26,11 +27,15 @@
             <a href="https://www.instagram.com/ontrackbikes/">  <img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Instagram_colored_svg_1-128.png" alt=" "  width="auto" height="30px" class="pr-2"></a>
               
       </div>
-      <div class="col-md-3 text-right col-12" style="justify-content:right">
+      <div class="col-md-3 text-right col-12" style="justify-content:center">
         <h1 class="cal">GET IN TOUCH</h1>
-      <a href="mailto:info@on-track.in"> <p class="dfh" style="font-size:14px;  letter-spacing:0.5px; color:#999999">info@on-track.in</p></a>
-      <a href="tel:+91-9148518401">  <p class="dfh" style="font-size:14px;  letter-spacing:0.5px; color:#999999">+91 91485 18401</p></a>
-      </div>  
+        <a href="mailto:info@on-track.in"> <p class="dfh" style="font-size:14px;  letter-spacing:0.5px; color:#999999">info@on-track.in</p></a>
+        <a href="tel:+91-9148518401">  <p class="dfh" style="font-size:14px;  letter-spacing:0.5px; color:#999999">+91 91485 18401</p></a>
+      </div>
+      <div class="col-md-3 text-right col-12" style="justify-content:right">
+        <h1 class="cal">FINANCING PARTNER</h1>
+        <a href="https://wheelsemi.com/"><img src="https://wheelsemi.com/resources/frontend_v2/images/wheels_emi_logo.png" alt="" height="50px" width="auto"></a> 
+      </div>   
     </div>
     </div>
         <div class="col-md-9 d-flex py-3 call  border1 m-auto" style="justify-content:space-between ">
@@ -51,7 +56,7 @@
         </div>
         <div class="col-md-6 m-0  p-0">
             <p class="text-right" style="font-weight:bolder;cursor:pointer;padding-top:50px" @click="scrollToTop"><i class="fa fa-arrow-up pr-2" style="color:white" aria-hidden="true"></i> BACK TO TOP</p>
-            <p class="text-right pt-2" >© 2020 - Ontrack Technologies Pvt Ltd. - All rights reserved</p>
+            <p class="text-right pt-2" >© 2020 - Ontrack Technologies Pvt. Ltd. - All rights reserved</p>
         </div>
     </div>
     </div>
@@ -81,16 +86,17 @@
               <!-- <a href="https://itunes.apple.com/in/app/ontrack-monthly-bike-rental/id1433908606"><img class="mt-1 pl-1" src="https://on-track.in/wp-content/uploads/2020/10/appstore_3x_986b88218b6de481d2ddb4b9087c8ee5.png" alt="" width="auto" height="40px"></a> -->
               </div>
           </div>
-          <div class=" col-12 mb-4  text-left">
-            <h1 class="cal">BUY SAFE, PAY EASY</h1>
-            <p class="dfh" style="font-size:14px; font-weight:500; letter-spacing:0.5px; color:#999999"><span><i class="fa fa-calendar" aria-hidden="true"></i></span> Credit card EMI : Now pay in easy installments </p>
-          </div>
-          <div class="text-left  col-12" >
+          
+          <div class="text-left  col-12 mb-4" >
             <h1 class="cal">GET IN TOUCH</h1>
             <a href="mailto:info@on-track.in"> <p class="dfh" style="font-size:14px;  letter-spacing:0.5px; color:#999999">info@on-track.in</p></a>
             <a href="tel:+91-9148518401">  <p class="dfh" style="font-size:14px;  letter-spacing:0.5px; color:#999999">+91 91485 18401</p></a>
           </div>
           
+          <div class="text-left  col-12" >
+            <h1 class="cal">FINANCING PARTNER</h1>
+            <a href="https://wheelsemi.com/"><img src="https://wheelsemi.com/resources/frontend_v2/images/wheels_emi_logo.png" alt="" height="50px" width="auto"></a> 
+          </div>
         </div>
       </div>
       <div class="row col-12 py-3 m-0 p-0 px-3 " style=" background: #4E44D8; color:white; cursor:pointer">
@@ -115,7 +121,7 @@
         </div>
         <hr style="color:white">
         <div class="col-12 my-3">
-           <p class="text-center" style="font-size:12px">© 2020 - Ontrack technologies Pvt Ltd. - All rights reserved</p>
+           <p class="text-center" style="font-size:12px">© 2020 - Ontrack technologies Pvt. Ltd. - All rights reserved</p>
         </div>
       </div>
     </div>
@@ -129,13 +135,21 @@
 export default {
    methods: { 
            scrollToTop() {
-                window.scrollTo(0,0);
+                 window.document.body.scrollTop = 0;
            }
         }
 };
 </script>
 
 <style scoped>
+@font-face {
+  font-family: Gilroyf;
+  src: url(../assets/font/Gilroy-ExtraBold.otf);
+}
+@font-face {
+  font-family: Gilroy;
+  src: url(../assets/font/Gilroy-Light.otf);
+}
 .cal{
       font-size: 19px;
     font-weight: 700;
