@@ -14,7 +14,7 @@
                     </p>
                     <div v-else class="form row pt-3" >
                         <p class="text-center pb-1"  style="color:red" v-if="message">{{message}}</p>
-                        <div v-if="step==1">
+                     
                         <div class="col-md-3  text-center col-12 mb-4 " >
                             <div class="col-12 text-center " style="box-shadow: 2px 2px 12px #55555530;">
                                 <input 
@@ -63,10 +63,9 @@
                                 <span class="floating-label">Vehicle Name</span>
                             </div>
                         </div>
-                        <button class="btun1" @click.prevent="next()">Next</button>
-                        </div>
+                      
 
-                        <div v-if="step==2">
+                     
                             <div class="form col-12 m-0 p-3 px-4 row">
                                 <div class=" col-6 pr-3 mt-3 m-0 p-0">
                                     <p class=""><strong style="color:grey">Aadhar Card</strong></p>
@@ -94,7 +93,7 @@
                                         </label>
                                     </div>
                                 </div>
-                                <button class="btun1" @click.prevent="prev()">Previous</button>
+                               
                             </div>
                             
                             <div class="text-center ml-5">
@@ -104,7 +103,7 @@
                                 </div>
                             </div>  
                         </div>  
-                    </div>  
+                   
             </div>
             </div>
                 
@@ -322,6 +321,10 @@ export default {
             this.success = false
         }
         },
+        scrollToTop() {
+                document.body.scrollTop = 0; // For Safari
+                document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+            },
          prev(){
                     this.step--;
                 },

@@ -280,9 +280,13 @@ import buybackmobile from '../components/buybackmobile'
   buybackmobile
   },
     methods:{
-        topFunction() {
+        xs() {
             var elmnt = document.getElementById("form");
             elmnt.scrollIntoView();
+            },
+            scrollToTop() {
+                document.body.scrollTop = 0; // For Safari
+                document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
             },
         close_resp(){
         if(this.success == true){
