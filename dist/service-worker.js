@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.5cb502f301cb136b7b382533535f1748.js"
+  "/precache-manifest.b500f28de027dc87389b2cd296a50a8e.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "ontrack-shop"});
