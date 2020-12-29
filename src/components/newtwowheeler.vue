@@ -1,25 +1,27 @@
 <template>
     <div class="col-md-12 mt-5 p-0">
        <div class="col-md-12 m-0 p-0">
-           <h3><strong>*******************We are starting loan service soon**************************</strong>  </h3>
             <div class="col-md-4 mb-5 py-3  mt-5 " style="background-image: linear-gradient(240deg, #3322D3 0%, #A55BEC 100%); border-radius:0px 15px 15px 0px; color:white">
                 <h3 class="pb-0 ml-4 pl-2 mb-0" style="font-size:36px;font-family: Gilroyf">New Two Wheeler Loans</h3>
                 <p class="text-left pl-5" style="font-size:15px;font-family: Gilroy">Easy. Fast. Financed by those you trust.</p>
             </div>
-            <div class="col-md-12 m-0 p-0" >
-                    <div class="bg-img" >
-                        
-                        <div class="container" style="box-shadow: 0 5px 10px 0 rgba(0,89,163,.15); border-radius:25px;height:470px">
-                            <p v-if="hasBeenSubmitted" >
-                                Thanks for filling in this lovely form
-                            </p>
+            <div class="col-md-12 col-12 m-0 p-0" >
+                    <div class="bg-img col-md-12 pt-3 col-12 m-0 p-0" >
+                        <div class="col-10 m-auto ">
+                        <div class="container col-12 m-0 p-3" style="box-shadow: 0 5px 10px 0 rgba(0,89,163,.15); border-radius:25px;height:470px">
+                            <div v-if="hasBeenSubmitted" style="top:50px !" >
+                                <h3 class="mt-5"><strong>Thanks for filling this lovely form</strong></h3>
+                                <h6 class="mt-5">Your request has been registered.</h6>
+                                <h6>Our team will get in touch with you shortly.</h6>
+                                <img class="mt-5" src="https://www.flaticon.com/svg/static/icons/svg/3587/3587986.svg" alt="" width="30%">
+                            </div>
                             <div v-else  class="form row pt-3 px-3" >
-                                <p><strong style="font-size:20px;font-family:gilroyf">Tell us a bit about yourself, and we’ll get back to you with a finance offer.</strong></p>
+                                <p><strong style="font-size:20px;font-family:gilroyf">Just a few steps away from getting new a bike loan.</strong></p>
                                 <p class="text-center pb-1"  style="color:red" v-if="message">{{message}}</p>
                                 <div class="col-md-12 m-0 p-0 text-center justify-center" >
                                     
                                     <div class="col-md-12 m-0 p-0 text-center col-12 mb-4 " v-if="step == 1">
-                                        <img src="../assets/multi1.png" alt="" width="70%" height="auto">
+                                        <img src="../assets/multi2.png" alt="" width="70%" height="auto">
                                         <p class="text-center" style="font-size:20px; font-family:gilroyf; color:#4e44e8" >Step 1</p>
                                         <div class="col-md-12  text-center col-12 mb-4 " >
                                             <div class="col-12 text-center " style="box-shadow: 2px 2px 12px #55555530;">
@@ -57,7 +59,7 @@
                                     </div>
 
                                     <div class="col-md-12 col-12 text-center justify-center m-0 p-0" v-if="step === 2">
-                                        <img src="../assets/multi2.png" alt="" width="70%" height="auto">
+                                        <img src="../assets/multi3.png" alt="" width="70%" height="auto">
                                         <p class="text-center" style="font-size:20px; font-family:gilroyf; color:#4e44e8" >Step 2</p>      
                                         <div class="col-12 mb-4 text-center ">                
                                             <div class="col-12 text-center " style="box-shadow: 2px 2px 12px #55555530;"> 
@@ -85,7 +87,7 @@
                                                     </label>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6 col-6 p-0 pl-5 mt-3 m-0" >
+                                            <div class="col-md-6 col-6 p-0 cvb mt-3 m-0" style="padding-left:20px">
                                                 <p class=""><strong style="color:grey">PAN Card</strong></p>
                                                 <div class="form-check-inline">
                                                     <label class="form-check-label">
@@ -99,12 +101,12 @@
                                                 </div>
                                             </div>    
                                         </div>
-                                        <div class="col-md-12 col-12 mb-3  mt-5 row text-center" style="justify-content:center">
+                                        <div class="col-md-12 col-12 mb-3 fgh  row text-center" style="justify-content:center; margin-top:45px">
                                             <div class="col-md-5 col-6">
                                                 <button class="btun1" @click.prevent="step--">Previous</button>
                                             </div>
                                             <div class="col-md-4 col-6">
-                                                <button class="btun2" @click.prevent="step++">Submit</button>
+                                                <button class="btun2" @click="submit">Submit</button>
                                             </div>
                                         </div>
                                     </div>
@@ -113,12 +115,13 @@
 
                             </div>      
                         </div>
+                        </div>
                     </div>
             </div>
             </div>
        </div>
-        <div class="col-md-12 text-left m-0 p-0" style="border-top:15px solid red">
-            <div class="col-md-9 py-5 m-auto">
+        <div class="col-md-12 col-12 text-left m-0 p-0" style="border-top:15px solid red">
+            <div class="col-md-9 col-10 py-5 m-auto">
                     <h3 class="mb-3" style="font-family:gilroyf">Features</h3>
                     <p  class="pb-0 " style="font-family:gilroy">Quick Loan Processing</p>
                     <p  class="pb-0 " style="font-family:gilroy">Minimum Documentation</p>
@@ -126,10 +129,10 @@
                     <p style="font-family:gilroy">Multiple modes of Repayment - Direct Bank Debit, Online Booking, Payment Wallets & EMI by Cash.</p>
             </div>
         </div>
-        <div class="col-md-12 text-left m-0 p-0 py-5" style="background:linear-gradient(240deg, #3322D3 0%, #A55BEC 100%); color:white">
-            <div class="col-md-9 m-auto">
+        <div class="col-md-12  col-12 text-left m-0 p-0 py-5" style="background:linear-gradient(240deg, #3322D3 0%, #A55BEC 100%); color:white">
+            <div class="col-md-9 col-10 m-auto">
                     <h3 class="mb-3" style="font-family:gilroyf">Loan Eligibity Criteria</h3>
-                    <p class="pb-0 mb-0" style="font-family:gilroy">Salaried Professionals & Self-Employed over the age of 18 years and below 65 years by the end of the loan tenure.</p>
+                    <p class="" style="font-family:gilroy">Salaried Professionals & Self-Employed over the age of 18 years and below 65 years by the end of the loan tenure.</p>
                     <p style="font-family:gilroy">Employment Stability of at least 3 months in case of Salaried Professionals; & 12 months in case of Self-Employed.</p>
                     
             </div>
@@ -139,15 +142,74 @@
 </template>
 
 <script>
+// import axios from 'axios'
+
 export default {
-  data(){
-      return{
-          step:1,
-          hasBeenSubmitted: false
-      }
-  }
+    data(){
+        return{
+            step:1,
+                fullname:'',
+                year_of_purchase:'', 
+                dob:'',
+                gender:'',
+                pancard:'',
+                aadhar_card:'',
+                know_two_wheeler:'',
+                city:'',
+                mobile:'',
+                loading:false,
+                response:'',
+                message:'',
+                success:false,
+                source: '',
+                hasBeenSubmitted: false
+                }
+            },
+         
+            methods:{            
+                submit(){
+                    this.loading = true
+                    this.$http.post('https://backend-bikex.herokuapp.com/api/bike_loan',{
+                        fullname:this.fullname,
+                        dob:this.dob,
+                        gender:this.gender,
+                        pancard:this.pancard,
+                        aadhar_card:this.aadhar_card,
+                        know_two_wheeler:this.know_two_wheeler,
+                        mobile:this.mobile,
+                        city:this.city,
+                        }).
+                then(response=>{
+                this.hasBeenSubmitted = true;
+                this.response = response.body;
+                this.loading = false
+                
+                // this.$swal({
+                // title:'Your request has been registered.',
+                // text:'Our team will get in touch with you shortly.'
+                // })
+                this.success = true
+                // this.$router.push(
+                // {path:'/thankyou'
+                // })
+                }).catch(error => { 
+                    this.message = error.body.msg;
+                    this.loading= false
+                })   
+        }
+  },
+     computed:{
+     error(){
+         if(this.fullname ==""||this.mobile==""||this.know_two_wheeler==""||this.aadhar_card==""||this.pancard ==""||this.dob==""||this.gender==""||this.city==""||this.year_of_purchase==""||this.registration_no==""){
+             return true
+         }else{
+             return false
+         }
+     }
+ }
 }
 </script>
+
 
 <style scoped>
 @font-face {
@@ -426,5 +488,25 @@ input:focus, textarea:focus, select:focus{
 
 .btn:hover {
   opacity: 1;
+}
+@media screen and (max-width: 600px) {
+    .bg-img{
+        min-height: 542px !important;
+        background-size:cover !important
+        
+    }
+    .container{
+        top:0 !important;
+        max-width: 332px !important;
+        height: 500px !important;
+    
+    }
+    .floating-label {
+
+    font-size: 14px !important;
+}
+.fgh{
+    margin-top:40px !important;
+}
 }
 </style>

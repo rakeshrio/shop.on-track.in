@@ -15,43 +15,45 @@
             <div class="col-md-4 p-3 m-0 top123 " style="top:-160px; min-height:517px">
                 <div class=" col-12 p-4" style="background:white !important; border-radius:25px; box-shadow: 0 5px 10px 0 rgba(0,89,163,.15); min-height:517px">
                     <p><strong style="font-size:20px;font-family:gilroyf">Tell us a bit about yourself, and we’ll get back to you with a finance offer.</strong></p>
-                        <p v-if="hasBeenSubmitted" >
-                            Thanks for filling in this lovely form
-                        </p>
+                        <div v-if="hasBeenSubmitted" style="top:50px !" >
+                                <h3 class="mt-5"><strong>Thanks for filling this lovely form</strong></h3>
+                                <h6 class="mt-5">Your request has been registered.</h6>
+                                <h6>Our team will get in touch with you shortly.</h6>
+                                <img class="mt-5" src="https://www.flaticon.com/svg/static/icons/svg/3587/3587986.svg" alt="" width="30%">
+                        </div>
                         <div v-else class="form row pt-3" >
                             <p class="text-center pb-1"  style="color:red" v-if="message">{{message}}</p>
                                 <div class="col-md-12 text-center justify-center" v-if="step === 1">
                                     <img src="../assets/multi1.png" alt="" width="70%" height="auto">
                                     <p class="text-center" style="font-size:20px; font-family:gilroyf; color:#4e44e8" >Step 1</p>
-                                    
-                                <div class="col-md-12  text-center col-12 mb-4 " >
-                                    <div class="col-12 text-center " style="box-shadow: 2px 2px 12px #55555530;">
-                                        <input list="hosting-plan1" type="text" class="form-control" v-model="fullname" required>  
-                                        <span class="floating-label">Name</span>
+                                    <div class="col-md-12  text-center col-12 mb-4 " >
+                                        <div class="col-12 text-center " style="box-shadow: 2px 2px 12px #55555530;">
+                                            <input list="hosting-plan1" type="text" class="form-control" v-model="fullname" required>  
+                                            <span class="floating-label">Name</span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-12 col-12 mb-4">
-                                    <div class="col-12 text-center " style="box-shadow: 2px 2px 12px #55555530;">
-                                        <input list="hosting-plan2" type="text" class="form-control" placeholder="DD-MM-YYYY" v-model="dob" required>
-                                        <span class="floating-label"></span>
+                                    <div class="col-md-12 col-12 mb-4">
+                                        <div class="col-12 text-center " style="box-shadow: 2px 2px 12px #55555530;">
+                                            <input list="hosting-plan2" type="text" class="form-control" placeholder="DD-MM-YYYY" v-model="dob" required>
+                                            <span class="floating-label"></span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-12 col-12 mb-4">
-                                    <div class="col-12 text-center " style="box-shadow: 2px 2px 12px #55555530;">
-                                        <input list="hosting-plan99" type="number" class="form-control"  v-model="mobile" required>
-                                        <span class="floating-label">Mobile number</span>
+                                    <div class="col-md-12 col-12 mb-4">
+                                        <div class="col-12 text-center " style="box-shadow: 2px 2px 12px #55555530;">
+                                            <input list="hosting-plan99" type="number" class="form-control"  v-model="mobile" required>
+                                            <span class="floating-label">Mobile number</span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-12 mb-4 text-center ">                
-                                    <div class="col-12 text-center " style="box-shadow: 2px 2px 12px #55555530;"> 
-                                        <input list="hosting-plan5" type="text" class="form-control" v-model="gender" required>
-                                        <datalist id="hosting-plan5">
-                                            <option value="Male"></option>
-                                            <option value="Female"></option> 
-                                        </datalist>
-                                        <span class="floating-label">Gender</span>
+                                    <div class="col-12 mb-4 text-center ">                
+                                        <div class="col-12 text-center " style="box-shadow: 2px 2px 12px #55555530;"> 
+                                            <input list="hosting-plan5" type="text" class="form-control" v-model="gender" required>
+                                            <datalist id="hosting-plan5">
+                                                <option value="Male"></option>
+                                                <option value="Female"></option> 
+                                            </datalist>
+                                            <span class="floating-label">Gender</span>
+                                        </div>
                                     </div>
-                                </div>
                                 <div class="col-md-12 col-12 row text-center" style="justify-content:center">
                                     <div class="col-md-4 col-6 m-auto">
                                         <button class="btun1" @click.prevent="next()">Next</button>
@@ -60,36 +62,34 @@
                                 </div>
 
                                 <div class="col-md-12 col-12 text-center justify-center" v-if="step === 2">
-                                <img src="../assets/multi2.png" alt="" width="70%" height="auto">
-                                <p class="text-center" style="font-size:20px; font-family:gilroyf; color:#4e44e8" >Step 2</p>
-                                
-                                <div class="col-12 mb-4 text-center ">                
-                                    <div class="col-12 text-center " style="box-shadow: 2px 2px 12px #55555530;"> 
-                                        <input list="hosting-plan8" type="text" class="form-control" v-model="know_two_wheeler" required>
-                                        <span class="floating-label">Which 2-wheeler do you have?</span>
+                                    <img src="../assets/multi2.png" alt="" width="70%" height="auto">
+                                    <p class="text-center" style="font-size:20px; font-family:gilroyf; color:#4e44e8" >Step 2</p>      
+                                    <div class="col-12 mb-4 text-center ">                
+                                        <div class="col-12 text-center " style="box-shadow: 2px 2px 12px #55555530;"> 
+                                            <input list="hosting-plan8" type="text" class="form-control" v-model="know_two_wheeler" required>
+                                            <span class="floating-label">Which 2-wheeler do you have?</span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-12 col-12 mb-4">
-                                    <div class="col-12 text-center " style="box-shadow: 2px 2px 12px #55555530;">   
-                                            <input list="hosting-plan4" type="text" class="form-control" v-model="registration_no" required>
-                                            <span class="floating-label">Vehicle Registration Number</span>
+                                    <div class="col-md-12 col-12 mb-4">
+                                        <div class="col-12 text-center " style="box-shadow: 2px 2px 12px #55555530;">   
+                                                <input list="hosting-plan4" type="text" class="form-control" v-model="registration_no" required>
+                                                <span class="floating-label">Vehicle Registration Number</span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-12 col-12 mb-4">
-                                    <div class="col-12 text-center " style="box-shadow: 2px 2px 12px #55555530;">   
-                                            <input list="hosting-plan4" type="text" class="form-control" v-model="year_of_purchase" required>
-                                            <span class="floating-label">Year of Purchase</span>
+                                    <div class="col-md-12 col-12 mb-4">
+                                        <div class="col-12 text-center " style="box-shadow: 2px 2px 12px #55555530;">   
+                                                <input list="hosting-plan4" type="text" class="form-control" v-model="year_of_purchase" required>
+                                                <span class="floating-label">Year of Purchase</span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-12 col-12 row text-center" style="justify-content:center">
-                                    <div class="col-md-5 col-6">
-                                        <button class="btun1" @click.prevent="prev()">Previous</button>
+                                    <div class="col-md-12 col-12 row text-center" style="justify-content:center">
+                                        <div class="col-md-5 col-6">
+                                            <button class="btun1" @click.prevent="prev()">Previous</button>
+                                        </div>
+                                        <div class="col-md-4 col-6">
+                                            <button class="btun1" @click.prevent="next()">Next</button>
+                                        </div>
                                     </div>
-                                    <div class="col-md-4 col-6">
-                                        <button class="btun1" @click.prevent="next()">Next</button>
-                                    </div>
-                                </div>
-
                                 </div>
 
                                 <div class="col-md-12 col-12 text-center justify-center" v-if="step === 3">
@@ -240,7 +240,7 @@
                 </div>
             </div>
             <div class="col-md-12 m-0 p-0" style="background:#4E44D8; color:white;">
-                <div class="col-md-9 text-left m-auto p-0 py-5 px-3" >
+                <div class="col-md-9 col-10 text-left m-auto p-0 py-5 px-3" >
                     <h3 class="pb-3" style="font-family:gilroyf;">Features</h3>
                     <p>Upto 65% of Current Market value</p>
                     <p>Vehicles continues to be in your custody, ride freely</p>
@@ -254,7 +254,7 @@
                 </div>
             </div>
             <div class="col-md-12 m-0 p-0" style="border-top:25px solid 	#ff4000; border-bottom:25px solid 	#ff4000;">
-                <div class="col-md-9 text-left m-auto p-0 px-3 py-5" >
+                <div class="col-md-9 col-10 text-left m-auto p-0 px-3 py-5" >
                     <h3 class="pb-3" style="font-family:gilroyf;">Loan Eligibility Criteria</h3>
                     <p>Salaried Professional & Self-Employed over the age of 18 years and below 65 years by the end of the tenure.</p>
                     <p>Employment Stability of at least 3 months in case of Salaried Professionals & 12 monthd in case of Self-Employed.</p>
