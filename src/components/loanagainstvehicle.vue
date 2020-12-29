@@ -414,7 +414,10 @@ export default {
         top:0 !important
     }
     .heig{
-        height:290px
+        height:280px !important
+    }
+    .wid{
+        width:100% !important
     }
 }
     .stepnumber{
