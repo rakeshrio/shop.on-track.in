@@ -2,7 +2,7 @@
     <div class="col-md-12 mt-5 pb-5 m-0 p-0 " style="background:#f7f7f7">
         <div class="col-md-12 m-0 p-0" style="background: white">
             <div class="col-md-9 text-left mt-5  m-auto "  >
-                <p class="pl-3 mb-0 " style="font-size:17px; font-family:gilroy">Enabling Independent affordable transportation</p>
+                <p class="pl-3 mb-0 " style="font-size:17px; font-family:gilroy">Enabling Independent Affordable Transportation</p>
                 <h4 class="pl-3 " style="font-size:30px; font-family:gilroyf">One Bike At A Time</h4>
                 <div class="col-md-12 py-5 mb-5 row m-0 p-0" style="min-height:300px ">
                     <div class="col-md-4 " @click="$router.push('/buyback')" style="cursor:pointer;    ">

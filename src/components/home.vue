@@ -1,20 +1,23 @@
 <template>
-  <div class="col-md-12 m-0 p-0" style="font-family:Gilroy">
-      <!-- <div class="col-md-9 " style="margin:0 auto">
+  <div class="col-md-12 m-0 p-0" style="font-family: Gilroy">
+    <!-- <div class="col-md-9 " style="margin:0 auto">
         <div class="col-md-4 m-0 p-0 col-4 text-center" >
               <div class="col-md-8 px-1 pt-4 pb-4  bord" style="background:#4E44D8; margin:0 auto;">
                 <img src="https://on-track.in/wp-content/uploads/2020/10/logo-white.svg" alt="" width="70%">
               </div>
         </div>
       </div> -->
-    <section>
-      <div class="col-md-12 banner m-0 p-0 col-12" style="cursor:pointer"  @click="$router.push('/models')">
-        <div class="col-md-12 carousel1 mt-0 laptop mx-0 pt-0 p-0" >
+    <section class="">
+      <div
+        class="col-md-12 banner m-0 p-0 col-12"
+        style="cursor: pointer"
+        @click="$router.push('/models')"
+      >
+        <div class="col-md-12 carousel1 mt-0 laptop mx-0 pt-0 p-0">
           <div
             id="carouselExampleIndicators"
             class="carousel m-0 p-0 col-md-12 slide"
             data-ride="carousel"
-          
           >
             <ol
               class="carousel-indicators"
@@ -42,8 +45,8 @@
             role="button"
             data-slide="prev"
           >
-            <p class="mt-5" style="color:white">
-              <i class="fa fa-angle-left " aria-hidden="true"></i>
+            <p class="mt-5" style="color: white">
+              <i class="fa fa-angle-left" aria-hidden="true"></i>
             </p>
           </a>
           <a
@@ -52,7 +55,7 @@
             role="button"
             data-slide="next"
           >
-            <p class="mt-5" style="color:white">
+            <p class="mt-5" style="color: white">
               <i class="fa fa-angle-right" aria-hidden="true"></i>
             </p>
           </a>
@@ -107,7 +110,7 @@
           </div>
       </div>
     </section> -->
-    <div class="col-md-12 p-0 mt-2 pt-2  pb-2 mb-2" style="margin:0 auto">
+    <div class="col-md-12 p-0 mt-2 pt-2 pb-2 mb-2" style="margin: 0 auto">
       <!-- <div class="col-md-12 text-left" style="margin:0 auto">
           <h1 class="font2 mb-4 mt-5 text-center" style="">People Choice</h1>
       </div> -->
@@ -124,28 +127,26 @@
         </div>
       </div> -->
 
-      
-      <h2 class="font2 mt-5 mb-5 ">All Brands</h2>
+      <!-- <h2 class="font2 mt-5 mb-5">All Brands</h2>
       <div class="col-md-9 p-0 mb-3 m-auto">
         <div
           class="col-md-12 justify-content-center pb-5 my-4 row"
-          style="margin:0 auto;padding-bottom:100px"
+          style="margin: 0 auto; padding-bottom: 100px"
         >
           <div
-            style="cursor:pointer"
-            class="col-md-4  text-center p-3  col-4"
+            style="cursor: pointer"
+            class="col-md-4 text-center p-3 col-4"
             v-for="(data, index) in allBrands"
             :key="index"
             @click="go(data.make, data.existing)"
           >
             <img
               v-if="data.existing == true"
-              class=" sizee  "
+              class="sizee"
               :src="data.brand_logo"
               alt=""
               width="110px"
               height="61px"
-              
             />
             <img
               v-else
@@ -157,16 +158,179 @@
             />
           </div>
         </div>
+      </div> -->
+
+ 
+
+      <div class="col-md-12 m-0 my-5 p-0" >
+        <div
+          class="col-md-9 m-auto text-left p-4 py-5"
+          style="box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; border-radius:20px"
+        >
+          <h2 class="font2 mb-3">Active Brands</h2>
+          <div class="col-md-12 row m-0 p-0 mb-5" style="cursor: pointer">
+            <div class="col-md-2 col-6" @click="$router.push('/model-by-make/Hero')">
+              <div
+                class="col-md-12 card p-4"
+                style="
+                  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+                  border: none;
+                  border-radius: 20px;
+                "
+              >
+                <img
+                  src="https://imgd.aeplcdn.com/110x61/bw/makes/hero20200508192826.jpg"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="col-md-2 col-6" @click="$router.push('/model-by-make/Honda')">
+              <div
+                class="col-md-12 card p-4"
+                style="
+                  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+                  border: none;
+                  border-radius: 20px;
+                "
+              >
+                <img
+                  src="https://imgd.aeplcdn.com/110x61/bw/makes/honda20200511152343.jpg"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          <h2 class="font2 mb-3">Arriving Soon</h2>
+          <div class="col-md-12 row m-0 p-0" style=" border-radius: 20px;" >
+            <div class="slider pt-4 col-md-12 ml-2"  style=" border-radius: 20px;">
+              <div class="slide-track">
+                
+                <div class="slide ">
+                  <img class=""
+                    src="https://imgd.aeplcdn.com/110x61/bw/makes/suzuki20200508193118.jpg"
+                    height="auto"
+                    width="100px"
+                    alt=""
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="https://imgd.aeplcdn.com/110x61/bw/makes/royal-enfield20200508193112.jpg"
+                    height="auto"
+                    width="100px"
+                    alt=""
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="https://imgd.aeplcdn.com/110x61/bw/makes/tvs20200508193203.jpg"
+                    height="auto"
+                    width="100px"
+                    alt=""
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="https://imgd.aeplcdn.com/110x61/bw/makes/bajaj20200508192534.jpg"
+                    height="auto"
+                    width="100px"
+                    alt=""
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="https://imgd.aeplcdn.com/110x61/bw/makes/ktm20200518163508.jpg"
+                    height="auto"
+                    width="100px"
+                    alt=""
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="https://imgd.aeplcdn.com/110x61/bw/makes/jawa20200508192940.jpg"
+                    height="auto"
+                    width="100px"
+                    alt=""
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="https://imgd.aeplcdn.com/110x61/bw/makes/yamaha20200508193220.jpg"
+                    height="auto"
+                    width="100px"
+                    alt=""
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="https://imgd.aeplcdn.com/110x61/bw/makes/vespa20200508193212.jpg"
+                    height="auto"
+                    width="100px"
+                    alt=""
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="https://imgd.aeplcdn.com/110x61/bw/makes/aprilia20200508192455.jpg"
+                    height="auto"
+                    width="100px"
+                    alt=""
+                  />
+                </div>
+                
+                <div class="slide">
+                  <img
+                    src="https://imgd.aeplcdn.com/110x61/bw/makes/kawasaki20200508192950.jpg"
+                    height="auto"
+                    width="100px"
+                    alt=""
+                  />
+                </div>
+                <div class="slide ">
+                  <img
+                    src="https://imgd.aeplcdn.com/110x61/bw/makes/hyosung20200511152353.jpg"
+                    height="auto"
+                    width="100px"
+                    alt=""
+                  />
+                </div>
+                <div class="slide text-center">
+                  <img
+                    src="https://imgd.aeplcdn.com/110x61/bw/makes/harleydavidson20200508192816.jpg"
+                    height="auto"
+                    width="100px"
+                    alt=""
+                  />
+                </div>
+                <div class="slide text-center">
+                  <img
+                    src="https://imgd.aeplcdn.com/110x61/bw/makes/hero-electric20200508192834.jpg"
+                    height="auto"
+                    width="100px"
+                    alt=""
+                  />
+                </div>
+                
+                
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    
+
+
+
+      <!-- <div class="col-md-12 m-0 p-0" style="background: linear-gradient(240deg, rgb(51, 34, 211) 0%, rgb(165, 91, 236) 100%);
+      color: white; height:200px">
+        
+      </div> -->
+
+
     </div>
   </div>
 </template>
 
 <script>
-
-
-
 export default {
   data() {
     return {
@@ -174,10 +338,7 @@ export default {
       banners: [],
     };
   },
-  components:{
-  
-
-  },
+  components: {},
   mounted() {
     this.$http
       .get("https://backend-bikex.herokuapp.com/api/otr_banner/visible")
@@ -238,6 +399,55 @@ export default {
 </script>
 
 <style scoped>
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 7));
+  }
+}
+.slider {
+  background: white;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+  height: 100px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 960px;
+}
+.slider::before,
+.slider::after {
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  content: "";
+  height: 100px;
+  position: absolute;
+  width: 200px;
+  z-index: 2;
+}
+.slider::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+.slider::before {
+  left: 0;
+  top: 0;
+}
+.slider .slide-track {
+  animation: scroll 40s linear infinite;
+  display: flex;
+  width: calc(250px * 14);
+}
+.slider .slide {
+  height: 100px;
+  width: 250px;
+}
+
 .zxcvb {
   opacity: 0.3;
 }

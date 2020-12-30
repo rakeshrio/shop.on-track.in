@@ -13,8 +13,11 @@
                     <div @click="goToCheckout(data._id)" class="card-body card-body1 " >
                         <img :src="data.hero_image" alt="" width="100%">
                         <h2 class="title mt-4">{{data.make}} {{data.model}}</h2>
-                         <h2 class="ghj  mt-2" style="font-size:12px;color:grey" v-if="data.superset.length > 0 ">Starts from <span class="dfg" style="color:#4E44D8; font-weight:bold">{{getPrice(data.superset)}}</span>/month</h2>
-                
+                        <h2 class="ghj  mt-2" style="font-size:12px;color:grey" v-if="data.superset.length > 0 ">Starts from <span class="dfg" style="color:#4E44D8; font-weight:bold">{{getPrice(data.superset)}}</span>/month</h2>
+                        <h2 class="ghj  mt-2" style="font-size:12px;color:grey" v-if="data.superset.length > 0 ">Or <span class="dfg" style="color:#4E44D8; font-weight:bold"> {{getPrice1(data.superset)}}</span> onroad</h2>
+                        
+                        
+       
                         <!-- <div class="m-0 p-0 d-flex">
                             <h2 class="title  mt-2" style="color:#4E44D8; font-weight:bold" v-if="data.superset.length > 0 "><span class="little" style="font-size:12px;color:grey">Starts from </span> {{getPrice(data.superset)}}</h2>
                             <p class="p1" style="font-size: 12px;margin-top: 10px;padding-left: 4px;"> /month</p>

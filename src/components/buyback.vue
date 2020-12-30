@@ -18,19 +18,19 @@
                         <div class="  text-center col-12 mb-4 " >
                             <div class="col-12 col-md-12 text-center " style="box-shadow: 2px 2px 12px #55555530;">
                                 <input list="hosting-plan1" type="text" class="form-control" v-model="name" required>  
-                                <span class="floating-label">Name</span>
+                                <span class="floating-label">Full Name</span>
                             </div>
                         </div>
                         <div class=" col-12 mb-4">
                             <div class="col-12 text-center " style="box-shadow: 2px 2px 12px #55555530;">
-                                <input list="hosting-plan2" type="text" class="form-control" placeholder="DD-MM-YYYY" v-model="dob" required>
-                                <span class="floating-label"></span>
+                                <input list="hosting-plan2" type="text" class="form-control" placeholder="" v-model="dob" required>
+                                <span class="floating-label">DOB (DD-MM-YYYY)</span>
                             </div>
                         </div>
                         <div class=" col-12 mb-4">
                             <div class="col-12 text-center " style="box-shadow: 2px 2px 12px #55555530;">
                                 <input list="hosting-plan99" type="number" class="form-control"  v-model="mobile" required>
-                                <span class="floating-label">Mobile number</span>
+                                <span class="floating-label">Mobile Number</span>
                             </div>
                         </div>
                         <div class="col-12 mb-4 text-center ">                
@@ -38,7 +38,8 @@
                                 <input list="hosting-plan5" type="text" class="form-control" v-model="gender" required>
                                 <datalist id="hosting-plan5">
                                     <option value="Male"></option>
-                                    <option value="Female"></option> 
+                                    <option value="Female"></option>
+                                    <option value="Other"></option>  
                                 </datalist>
                                 <span class="floating-label">Gender</span>
                             </div>
@@ -57,7 +58,7 @@
                                     <option value="Honda Activa"></option>
                                     <option value="TVS Jupiter"></option>  
                                 </datalist>
-                                <span class="floating-label">Vehicle Name</span>
+                                <span class="floating-label">Select Vehicle</span>
                             </div>
                         </div>
                         <div class="form col-12 m-0 p-3 px-4 row">

@@ -8,7 +8,7 @@
             <div class="col-md-12 col-12 m-0 p-0" >
                     <div class="bg-img col-md-12 pt-3 col-12 m-0 p-0" >
                         <div class="col-10 m-auto ">
-                        <div class="container col-12 m-0 p-3" style="box-shadow: 0 5px 10px 0 rgba(0,89,163,.15); border-radius:25px;height:470px">
+                        <div class="container col-12 m-0 p-3" style="    box-shadow: 0 3px 20px 0 rgba(0,0,0,.1); border-radius:25px;height:470px">
                             <div v-if="hasBeenSubmitted" style="top:50px !" >
                                 <h3 class="mt-5"><strong>Thanks for filling this lovely form</strong></h3>
                                 <h6 class="mt-5">Your request has been registered.</h6>
@@ -21,7 +21,7 @@
                                 <div class="col-md-12 m-0 p-0 text-center justify-center" >
                                     
                                     <div class="col-md-12 m-0 p-0 text-center col-12 mb-4 " v-if="step == 1">
-                                        <img src="../assets/multi2.png" alt="" width="70%" height="auto">
+                                        <img src="../assets/multi4.png" alt="" width="70%" height="auto">
                                         <p class="text-center" style="font-size:20px; font-family:gilroyf; color:#4e44e8" >Step 1</p>
                                         <div class="col-md-12  text-center col-12 mb-4 " >
                                             <div class="col-12 text-center " style="box-shadow: 2px 2px 12px #55555530;">
@@ -59,7 +59,7 @@
                                     </div>
 
                                     <div class="col-md-12 col-12 text-center justify-center m-0 p-0" v-if="step === 2">
-                                        <img src="../assets/multi3.png" alt="" width="70%" height="auto">
+                                        <img src="../assets/multi5.png" alt="" width="70%" height="auto">
                                         <p class="text-center" style="font-size:20px; font-family:gilroyf; color:#4e44e8" >Step 2</p>      
                                         <div class="col-12 mb-4 text-center ">                
                                             <div class="col-12 text-center " style="box-shadow: 2px 2px 12px #55555530;"> 
