@@ -9,12 +9,14 @@
             <div class="col-12 m-0 p-3 mt-3">
             <div class=" col-12  p-4" style="background:white !important; border-radius:25px; box-shadow: 0 5px 10px 0 rgba(0,89,163,.15);">
                 <p><strong style="font-size:20px">Tell us a bit about yourself, and we’ll tell you a lot more about this scheme.</strong></p>
-                    <p v-if="hasBeenSubmitted" >
-                        Thanks for filling in this lovely form
-                    </p>
+                    <div v-if="hasBeenSubmitted" style="top:50px " >
+                                <h3 class="mt-5"><strong>Thanks for filling this lovely form</strong></h3>
+                                <h6 class="mt-5">Your request has been registered.</h6>
+                                <h6>Our team will get in touch with you shortly.</h6>
+                                <img class="mt-5" src="https://www.flaticon.com/svg/static/icons/svg/3587/3587986.svg" alt="" width="30%">
+                    </div>
                     <div v-else class="form row pt-3" >
-                        <p class="text-center pb-1"  style="color:red" v-if="message">{{message}}</p>
-                     
+                        
                         <div class="col-md-3  text-center col-12 mb-4 " >
                             <div class="col-12 text-center " style="box-shadow: 2px 2px 12px #55555530;">
                                 <input 
@@ -98,6 +100,9 @@
                             </div>
                             
                             <div class="text-center ml-5">
+                            <div class="col-md-12  text-center">
+                                <p class="text-center pb-1"  style="color:red" v-if="message">{{message}}</p>
+                            </div>
                                 <div class="col-12 text-center xcv mt-3"  v-if="!success">
                                     <button  type="button" class="btn  _2iiQB _3qpfi text-center" @click="submit" >Submit</button>
                                     <span v-if="loading" class="spinner-border spinner-border-sm"></span>

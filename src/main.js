@@ -6,16 +6,23 @@ import store from './store'
 import VueResource from 'vue-resource'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
-import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
-import VueAnalytics from 'vue-analytics'
+import { BootstrapVue, IconsPlugin, } from 'bootstrap-vue'
+// import VueAnalytics from 'vue-analytics'
+import { CarouselPlugin } from 'bootstrap-vue'
+import { BCarousel } from 'bootstrap-vue'
+import Vuelidate from 'vuelidate'
 
-Vue.use(VueAnalytics, {
-  id: 'G-VFRJ110BJ7'
-})
+
+Vue.component('b-carousel', BCarousel)
+Vue.use(Vuelidate)
+// Vue.use(VueAnalytics, {
+//   id: 'G-VFRJ110BJ7'
+// })
 // Install BootstrapVue
 Vue.use(BootstrapVue)
 // Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin)
+Vue.use(CarouselPlugin)
 Vue.use(VueResource);
 Vue.config.productionTip = false
 // Vue.filter('currency', function (value) {

@@ -8,7 +8,7 @@
             <div class="col-md-12 col-12 m-0 p-0" >
                     <div class="bg-img col-md-12 pt-3 col-12 m-0 p-0" >
                         <div class="col-10 m-auto ">
-                        <div class="container col-12 m-0 p-3" style="    box-shadow: 0 3px 20px 0 rgba(0,0,0,.1); border-radius:25px;height:470px">
+                        <div class="container col-12 m-0 p-3" style="    box-shadow: 0 3px 20px 0 rgba(0,0,0,.1); border-radius:25px;height:509px">
                             <div v-if="hasBeenSubmitted" style="top:50px !" >
                                 <h3 class="mt-5"><strong>Thanks for filling this lovely form</strong></h3>
                                 <h6 class="mt-5">Your request has been registered.</h6>
@@ -17,7 +17,7 @@
                             </div>
                             <div v-else  class="form row pt-3 px-3" >
                                 <p><strong style="font-size:20px;font-family:gilroyf">Just a few steps away from getting new a bike loan.</strong></p>
-                                <p class="text-center pb-1"  style="color:red" v-if="message">{{message}}</p>
+                                
                                 <div class="col-md-12 m-0 p-0 text-center justify-center" >
                                     
                                     <div class="col-md-12 m-0 p-0 text-center col-12 mb-4 " v-if="step == 1">
@@ -101,7 +101,10 @@
                                                 </div>
                                             </div>    
                                         </div>
-                                        <div class="col-md-12 col-12 mb-3 fgh  row text-center" style="justify-content:center; margin-top:45px">
+                                        <div class="col-md-12 mt-2 text-center">
+                                            <p class="text-center pb-0 mb-0 mt-3"  style="color:red" v-if="message">{{message}}</p>
+                                        </div>
+                                        <div class="col-md-12 col-12 mb-3 fgh  row text-center" style="justify-content:center; margin-top:30px">
                                             <div class="col-md-5 col-6">
                                                 <button class="btun1" @click.prevent="step--">Previous</button>
                                             </div>

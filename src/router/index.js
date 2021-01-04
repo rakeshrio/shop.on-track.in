@@ -19,6 +19,7 @@ import purchase from '../components/purchase'
 import buyback from '../components/buyback'
 import newtwowheeler from '../components/newtwowheeler'
 import finance from '../components/finance'
+import test from '../components/test'
 import loanagainstvehicle from '../components/loanagainstvehicle'
 
 
@@ -27,6 +28,7 @@ Vue.use(VueRouter)
 const routes = [
 
   { path: '/models', component: models },
+  { path: '/test', component: test },
   { path: '/purchase', component: purchase },
   { path: '/cart/:id/:value', component: cart },
   { path: '/display/:id', component: display },

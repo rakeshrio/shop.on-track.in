@@ -22,7 +22,7 @@
                                 <img class="mt-5" src="https://www.flaticon.com/svg/static/icons/svg/3587/3587986.svg" alt="" width="30%">
                         </div>
                         <div v-else class="form row pt-3" >
-                            <p class="text-center pb-1"  style="color:red" v-if="message">{{message}}</p>
+                            
                                 <div class="col-md-12 text-center justify-center" v-if="step === 1">
                                     <img src="../assets/multi1.png" alt="" width="70%" height="auto">
                                     <p class="text-center" style="font-size:20px; font-family:gilroyf; color:#4e44e8" >Step 1</p>
@@ -132,8 +132,11 @@
                                 </div>
                                 
                             </div>
+                            <div class="col-md-12 m-0 p-0 text-center">
+                                <p class="text-center m-0 p-0"  style="color:red" v-if="message">{{message}}</p>
+                            </div>
                                 
-                            <div class="col-md-12 col-12 mt-5 row text-center" style="justify-content:center">
+                            <div class="col-md-12 col-12 mt-4 row text-center" style="justify-content:center">
                                 <div class="col-md-5 col-6">
                                     <button class="btun1" @click.prevent="prev()">Previous</button>
                                 </div>
