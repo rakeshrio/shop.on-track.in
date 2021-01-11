@@ -43,12 +43,18 @@
                                         </div>
                                         <div class="col-12 mb-4 text-center ">                
                                             <div class="col-12 text-center " style="box-shadow: 2px 2px 12px #55555530;"> 
-                                                <input list="hosting-plan5" type="text" class="form-control" v-model="gender" required>
+                                                <!-- <input list="hosting-plan5" type="text" class="form-control" v-model="gender" required>
                                                 <datalist id="hosting-plan5">
                                                     <option value="Male"></option>
                                                     <option value="Female"></option> 
                                                 </datalist>
-                                                <span class="floating-label">Gender</span>
+                                                <span class="floating-label">Gender</span> -->
+                                                <select class="form-control" id="exampleFormControlSelect1" v-model="gender">
+                                                    <option disabled value="">Select Gender</option>
+                                                    <option value="Male">Male</option>
+                                                    <option value="Female">Female</option>
+                                                    <option value="Other">Other</option>      
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="col-md-12 col-12 row text-center" style="justify-content:center">
@@ -69,8 +75,14 @@
                                         </div>
                                         <div class="col-md-12 col-12 mb-2">
                                             <div class="col-12 text-center " style="box-shadow: 2px 2px 12px #55555530;">   
-                                                <input list="hosting-plan4" type="text" class="form-control" v-model="city" required>
-                                                <span class="floating-label">City</span>
+                                                <!-- <input list="hosting-plan4" type="text" class="form-control" v-model="city" required>
+                                                <span class="floating-label">City</span> -->
+                                                <select class="form-control" id="exampleFormControlSelect1" v-model="city">
+                                                    <option disabled value="">Select City</option>
+                                                    <option value="Bengaluru">Bengaluru</option>
+                                                    <option value="Hyderabad">Hyderbabad</option>
+                                                    <option value="Pune">Pune</option>      
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="form col-12 m-0  px-4 row">
@@ -168,11 +180,14 @@ export default {
                 hasBeenSubmitted: false
                 }
             },
-         
+            created(){
+                this.source = this.$route.query.utm_source || 'new-two-wheeler(Organic)'
+            },
             methods:{            
                 submit(){
                     this.loading = true
                     this.$http.post('https://backend-bikex.herokuapp.com/api/bike_loan',{
+                        
                         fullname:this.fullname,
                         dob:this.dob,
                         gender:this.gender,
@@ -181,6 +196,10 @@ export default {
                         know_two_wheeler:this.know_two_wheeler,
                         mobile:this.mobile,
                         city:this.city,
+                        source:this.source
+                        },
+                        {
+                            headers: { 'Authorization': 'YwMiRtYxQpVcMsVy1w3Z9==' },
                         }).
                 then(response=>{
                 this.hasBeenSubmitted = true;

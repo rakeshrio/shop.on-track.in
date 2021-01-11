@@ -40,30 +40,32 @@
                         </div>
                         <div class="col-12 mb-4 text-center ">                
                             <div class="col-12 text-center " style="box-shadow: 2px 2px 12px #55555530;"> 
-                                <input list="hosting-plan5" type="text" class="form-control" v-model="gender" required>
-                                <datalist id="hosting-plan5">
-                                    <option value="Male"></option>
-                                    <option value="Female"></option> 
-                                    <option value="Other"></option> 
-                                </datalist>
-                                <span class="floating-label">Gender</span>
+                                <select class="form-control" id="exampleFormControlSelect1" v-model="gender">
+                                  <option disabled value="">Select Gender</option>
+                                  <option value="Male">Male</option>
+                                  <option value="Female">Female</option>
+                                  <option value="Other">Other</option>      
+                                </select>
                             </div>
                         </div>
                         <div class="col-md-3 col-12 mb-4">
                             <div class="col-12 text-center " style="box-shadow: 2px 2px 12px #55555530;">   
-                                    <input list="hosting-plan4" type="text" class="form-control" v-model="city" required>
-                                    <span class="floating-label">City</span>
+                                    <select class="form-control" id="exampleFormControlSelect1" v-model="city">
+                                        <option disabled value="">Select City</option>
+                                        <option value="Bengaluru">Bengaluru</option>
+                                        <option value="Hyderabad">Hyderbabad</option>
+                                        <option value="Delhi">Delhi</option>      
+                                    </select>
                             </div>
                         </div>
                         <div class="col-12 mb-4 text-center ">                
                             <div class="col-12 text-center " style="box-shadow: 2px 2px 12px #55555530;"> 
-                                <input list="hosting-plan8" type="text" class="form-control" v-model="vehicle_name" required>
-                                <datalist id="hosting-plan8">
-                                    <option value="Honda Dio"></option>
-                                    <option value="Honda Activa"></option>
-                                    <option value="TVS Jupiter"></option>  
-                                </datalist>
-                                <span class="floating-label">Select Vehicle</span>
+                                 <select class="form-control" id="exampleFormControlSelect1" v-model="vehicle_name">
+                                  <option disabled value="">Select Vehicle</option>
+                                  <option value="Honda Dio">Honda Dio</option>
+                                  <option value="Honda Activa">Honda Activa</option>
+                                  <option value="TVS Jupiter">TVS Jupiter</option>      
+                                </select>
                             </div>
                         </div>
                       
@@ -388,6 +390,9 @@ export default {
                     mobile:this.mobile,
                     city:this.city
                 
+            },
+            {
+                headers: { 'Authorization': 'YwMiRtYxQpVcMsVy1w3Z9==' },
             }).
             then(response=>{
             this.hasBeenSubmitted = true;

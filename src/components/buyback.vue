@@ -42,30 +42,39 @@
                         </div>
                         <div class="col-12 mb-4 text-center ">                
                             <div class="col-12 text-center " style="box-shadow: 2px 2px 12px #55555530;"> 
-                                <input list="hosting-plan5" type="text" class="form-control" v-model="gender" required>
-                                <datalist id="hosting-plan5">
-                                    <option value="Male"></option>
-                                    <option value="Female"></option>
-                                    <option value="Other"></option>  
-                                </datalist>
-                                <span class="floating-label">Gender</span>
+                                <select class="form-control" id="exampleFormControlSelect1" v-model="gender">
+                                  <option disabled value="">Select Gender</option>
+                                  <option value="Male">Male</option>
+                                  <option value="Female">Female</option>
+                                  <option value="Other">Other</option>      
+                                </select>
                             </div>
                         </div>
                         <div class=" col-12 mb-4">
                             <div class="col-12 text-center " style="box-shadow: 2px 2px 12px #55555530;">   
-                                    <input list="hosting-plan4" type="text" class="form-control" v-model="city" required>
-                                    <span class="floating-label">City</span>
+                                <select class="form-control" id="exampleFormControlSelect1" v-model="city">
+                                  <option disabled value="">Select City</option>
+                                  <option value="Bengaluru">Bengaluru</option>
+                                  <option value="Hyderabad">Hyderbabad</option>
+                                  <option value="Delhi">Delhi</option>      
+                                </select>
                             </div>
                         </div>
                         <div class="col-12 mb-4 text-center ">                
                             <div class="col-12 text-center " style="box-shadow: 2px 2px 12px #55555530;"> 
-                                <input list="hosting-plan8" type="text" class="form-control" v-model="vehicle_name" required>
+                                <!-- <input list="hosting-plan8" type="text" class="form-control" v-model="vehicle_name" required>
                                 <datalist id="hosting-plan8">
                                     <option value="Honda Dio"></option>
                                     <option value="Honda Activa"></option>
                                     <option value="TVS Jupiter"></option>  
                                 </datalist>
-                                <span class="floating-label">Select Vehicle</span>
+                                <span class="floating-label">Select Vehicle</span> -->
+                                <select class="form-control" id="exampleFormControlSelect1" v-model="vehicle_name">
+                                  <option disabled value="">Select Vehicle</option>
+                                  <option value="Honda Dio">Honda Dio</option>
+                                  <option value="Honda Activa">Honda Activa</option>
+                                  <option value="TVS Jupiter">TVS Jupiter</option>      
+                                </select>
                             </div>
                         </div>
                         <div class="form col-12 m-0 p-3 px-4 row">
@@ -116,11 +125,14 @@
        </div>
     </div>
     <div class="col-md-9 text-left m-auto p-0">
-        <div class="col-md-12 mt-5 m-0 p-0" style="height:350px">
-          <h4 class="mb-5" style="font-family:gilroyf">Benefits of Buy-Back?</h4>
-          <h6 class="mb-4"><span style="font-weight:700; font-size:19px"><img src="../assets/d1.png" alt="" width="50px" height="auto"> Affordability</span> - Cheaper EMI</h6>
-          <h6 class="mb-3"><span style="font-weight:700; font-size:19px"><img src="../assets/d2.png" alt="" width="50px" height="auto"> Flexibility</span>  - Option to Return Upgrade or Buy.</h6>
-          <h6 class="mb-3"><span style="font-weight:700; font-size:19px"><img src="../assets/d3.png" class="m-0 p-0 mt-3" alt="" width="50px" height="auto"> White Board</span>  - Vehicle Assigned or your name.</h6>
+        <div class="col-md-12 row  mt-5 m-0 p-0" style="height:350px">
+          <div class="col-md-6">
+            <h4 class="mb-5" style="font-family:gilroyf">Benefits of Buy-Back?</h4>
+            <h6 class="mb-4"><span style="font-weight:700; font-size:19px"><img src="../assets/d1.png" alt="" width="50px" height="auto"> Affordability</span> - Cheaper EMI</h6>
+            <h6 class="mb-3"><span style="font-weight:700; font-size:19px"><img src="../assets/d2.png" alt="" width="50px" height="auto"> Flexibility</span>  - Option to Return Upgrade or Buy.</h6>
+            <h6 class="mb-3"><span style="font-weight:700; font-size:19px"><img src="../assets/d3.png" class="m-0 p-0 mt-3" alt="" width="50px" height="auto"> White Board</span>  - Vehicle Assigned or your name.</h6>
+          </div>
+         
         </div>  
     </div>
 
@@ -270,6 +282,7 @@
 import { required, minLength, between } from 'vuelidate/lib/validators'
 // import axios from 'axios'
 import buybackmobile from '../components/buybackmobile'
+
  export default {
     data(){
         return{
@@ -291,8 +304,13 @@ import buybackmobile from '../components/buybackmobile'
                 }
             },
   components:{
-    buybackmobile
+    buybackmobile,
+    
+
   },
+  created(){
+    this.source = this.$route.query.utm_source || 'buyback-(Organic)'
+    },
   validations: {
     name: {
       required,
@@ -359,6 +377,7 @@ import buybackmobile from '../components/buybackmobile'
  submit(){
       this.loading = true
       this.$http.post('https://backend-bikex.herokuapp.com/api/ontrack-loan-enquiry',{
+                
                 name:this.name,
                     dob:this.dob,
                     gender:this.gender,
@@ -366,8 +385,11 @@ import buybackmobile from '../components/buybackmobile'
                     aadhar_card:this.aadhar_card,
                     vehicle_name:this.vehicle_name,
                     mobile:this.mobile,
-                    city:this.city
+                    city:this.city,
+                    source: this.source,
                 
+            },{
+              headers: { 'Authorization': 'YwMiRtYxQpVcMsVy1w3Z9==' },
             }).
             then(response=>{
                 this.hasBeenSubmitted = true;

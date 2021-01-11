@@ -46,14 +46,12 @@
                                     </div>
                                     <div class="col-12 mb-4 text-center ">                
                                         <div class="col-12 text-center " style="box-shadow: 2px 2px 12px #55555530;"> 
-                                            <input list="hosting-plan5" type="text" class="form-control" v-model="gender" required>
-                                            <datalist id="hosting-plan5">
-                                                <option value="Male"></option>
-                                                <option value="Female"></option> 
-                                                <option value="Other"></option> 
-
-                                            </datalist>
-                                            <span class="floating-label">Gender</span>
+                                            <select class="form-control" id="exampleFormControlSelect1" v-model="gender">
+                                                <option disabled value="">Select Gender</option>
+                                                <option value="Male">Male</option>
+                                                <option value="Female">Female</option>
+                                                <option value="Other">Other</option>      
+                                            </select>
                                         </div>
                                     </div>
                                 <div class="col-md-12 col-12 row text-center" style="justify-content:center">
@@ -99,8 +97,12 @@
                                 <p class="text-center" style="font-size:20px; font-family:gilroyf; color:#4e44e8" >Step 3</p>
                                 <div class="col-md-12 col-12 mb-4">
                                     <div class="col-12 text-center " style="box-shadow: 2px 2px 12px #55555530;">   
-                                        <input list="hosting-plan4" type="text" class="form-control" v-model="city" required>
-                                        <span class="floating-label">City</span>
+                                        <select class="form-control" id="exampleFormControlSelect1" v-model="city">
+                                            <option disabled value="">Select City</option>
+                                            <option value="Bengaluru">Bengaluru</option>
+                                            <option value="Hyderabad">Hyderbabad</option>
+                                            <option value="Delhi">Delhi</option>      
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form col-12 m-0 p-3 px-4 row">
@@ -295,7 +297,9 @@ export default {
                 hasBeenSubmitted: false
                 }
             },
-         
+         created(){
+            this.source = this.$route.query.utm_source || 'loan-against-vehicle (Organic)'
+            },
     methods:{
         topFunction() {
             var elmnt = document.getElementById("form");
@@ -356,6 +360,7 @@ export default {
                 submit(){
                     this.loading = true
                     this.$http.post('https://backend-bikex.herokuapp.com/api/loan_against_vehicle',{
+                        
                         fullname:this.fullname,
                         dob:this.dob,
                         gender:this.gender,
@@ -366,7 +371,11 @@ export default {
                         city:this.city,
                         registration_no:this.registration_no,
                         year_of_purchase:this.year_of_purchase,
+                        source:this.source
 
+                        },
+                        {
+                        headers: { 'Authorization': 'YwMiRtYxQpVcMsVy1w3Z9==' }
                         }).
             then(response=>{
             this.hasBeenSubmitted = true;
