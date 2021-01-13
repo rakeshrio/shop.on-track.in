@@ -1,12 +1,103 @@
 <template>
   <div class="col-md-12 m-0 p-0" style="font-family: Gilroy">
-    <!-- <div class="col-md-9 " style="margin:0 auto">
-        <div class="col-md-4 m-0 p-0 col-4 text-center" >
-              <div class="col-md-8 px-1 pt-4 pb-4  bord" style="background:#4E44D8; margin:0 auto;">
-                <img src="https://on-track.in/wp-content/uploads/2020/10/logo-white.svg" alt="" width="70%">
+
+      <div class="col-md-10 m-auto py-5">
+        <div class="col-md-4  m-0 p-0" style="box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; border-radius:25px">  
+            <div class="col-md-12 p-3  m-0 p-0">
+                <div class="col-md-12  mr-0">
+                  <h3 class="text-left mb-0" style="font-family:gilroyf">What Do You Want</h3> 
+                  <h3 class="text-left" style="font-family:gilroyf">To Do Today ?</h3>       
+                  <p class="text-left mt-3 mb-0" style="font-size:14px">Feel free to choose multiple services,</p>
+                  <p class="text-left mb-4"  style="font-size:14px">We are here to help you out with your requirements</p>
+                </div>
+              <div class="col-md-12 my-3 row pr-0 mr-0">
+                <div class="col-md-4">
+                  <div class="card col-md-12 pt-2 m-0 p-0" style="width: 20rem;box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; border-radius:10px; border:none">
+                    <div class="card-body m-0 p-1  col-md-12">
+                      <img src="../assets/scooter.png" alt="" width="60% " >
+                      <p class="mt-2 mb-1" style="font-size:12px">Buy New Bike/Scooter</p>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4  " >
+                  <div class="card col-md-12 pt-2 m-0 p-0" style="width: 20rem;box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; border-radius:10px; border:none">
+                    <div class="card-body  m-0 p-1 col-md-12">
+                        <img src="../assets/mc.png" alt="" width="60%" >
+                        <p class="mt-2 mb-1" style="font-size:12px"> Finance Options</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 ">
+                  <div class="card col-md-12 pt-2 m-0 p-0" style="width: 20rem;box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; border-radius:10px; border:none">
+                    <div class="card-body  m-0 p-1 col-md-12">
+                      <img src="../assets/ma.png" alt="" width="60%" >
+                      <p class="mt-2 mb-1" style="font-size:12px">Monthly Bike Rental</p>
+                    </div>
+                  </div>
+                </div>
               </div>
-        </div>
-      </div> -->
+              <div class=" col-12 mb-4 " >
+                <p class="text-left labell mb-0 pb-1 pb-0">NAME <span style="color:red">*</span></p>
+                  <div class="col-12 col-md-12 text-center "  style="box-shadow: 2px 2px 12px #55555530;">
+                    <input list="hosting-plan1" placeholder="FULL NAME" type="text" class="form-control pl-0"  required>  
+                  </div>
+              </div>
+              <div class=" col-12 mb-4 " >
+                <p class="text-left labell mb-0 pb-1 pb-0">DATE OF BIRTH <span style="color:red">*</span></p>
+                  <div class="col-12 col-md-12 text-center "  style="box-shadow: 2px 2px 12px #55555530;">
+                    <input list="hosting-plan1" placeholder="DD/MM/YYYY" type="text" class="form-control pl-0"  required>  
+                  </div>
+              </div>
+              <div class=" col-12 mb-4 " >
+                <p class="text-left labell mb-0 pb-1 pb-0">CONTACT NUMBER <span style="color:red">*</span></p>
+                  <div class="col-12 col-md-12 text-center "  style="box-shadow: 2px 2px 12px #55555530;">
+                    <input list="hosting-plan1" placeholder="+91-XXXXXXXXX" type="text" class="form-control pl-0"  required>  
+                  </div>
+              </div>
+              <div class=" col-12 mb-4 " >
+                <p class="text-left labell mb-0 pb-1 pb-0">EMAIL ADDRESS <span style="color:red">*</span></p>
+                  <div class="col-12 col-md-12 text-center "  style="box-shadow: 2px 2px 12px #55555530;">
+                    <input list="hosting-plan1" placeholder="email@address.com" type="text" class="form-control pl-0"  required>  
+                  </div>
+              </div>
+              
+              <div class=" col-12 m-0 px-3 row " >
+                  <div class="col-md-6 m-0 p-0">
+                    <p class="text-left labell mb-0 pb-1 pb-0">CITY <span style="color:red">*</span></p>
+                    <div class="col-12 col-md-12 text-center "  style="box-shadow: 2px 2px 12px #55555530;">
+                      <select class="form-control m-0 p-0"  >
+                        <option disabled value="">Select City</option>
+                        <option value="Bengaluru">Bengaluru</option>
+                        <option value="Hyderabad">Hyderbabad</option>
+                        <option value="Delhi">Delhi</option>      
+                      </select>
+                    </div>  
+                  </div>
+                  <div class="col-md-6 m-0 p-0">
+                    <p class="text-left labell mb-0 pb-1 pb-0" style="visibility:hidden">CITY <span style="color:red">*</span></p>
+                    <div class="form-check form-check-inline ml-4">
+                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                      <label class="form-check-label text-left" for="inlineRadio1" style="font-size:12px"> INTERESTED IN FINANCE OPTIONS?</label>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-12 py-2 mt-3 m-0 p-0" style="background:#4CAF50; color:white ; border-radius:0 0 24px 24px">
+              <h3 class="mb-0" style="font-family:gilroyf">SUBMIT</h3>
+            </div>  
+              
+                
+        </div>                                      
+      </div>                 
+
+
+
+
+
+
+
+
     <section class="">
       <div
         class="col-md-12 banner m-0 p-0 col-12"
@@ -413,8 +504,66 @@ export default {
   },
 };
 </script>
-import test from 
+
 <style scoped>
+.labell{
+  font-size:12px;
+};
+
+input:focus ~ .floating-label,
+input:not(:focus):valid ~ .floating-label{
+  top: -7px;
+  padding: 0px 5px 0px 5px;
+  background-color: #fefefe;
+  left: 20px;
+  font-size: 11px;
+  opacity: 1;
+  z-index: 1;
+  outline: none !important;
+  box-shadow: none !important
+}
+.form-control{
+    border:none !important
+}
+textarea:focus ~ .floating-label,
+textarea:not(:focus):valid ~ .floating-label{
+  top: -7px;
+  padding: 0px 5px 0px 5px;
+  background-color: #fefefe;
+  left: 20px;
+  font-size: 11px;
+  opacity: 1;
+  z-index: 1;
+  outline: none !important;
+  box-shadow: none !important
+}
+select:focus ~ .floating-label,
+select:not(:focus):valid ~ .floating-label{
+  top: -7px;
+  padding: 0px 5px 0px 5px;
+  background-color: #fefefe;
+  left: 20px;
+  font-size: 11px;
+  opacity: 1;
+  z-index: 1;
+  outline: none !important;
+  box-shadow: none !important
+}
+
+.inputText {
+outline: none !important;
+}
+input:focus, textarea:focus, select:focus{
+  outline: none !important;
+  box-shadow: none !important
+}
+.floating-label {
+  position: absolute;
+  pointer-events: none;
+  left: 30px;
+  top: 8px;
+  transition: 0.2s ease all;
+}
 .svb{
   border-radius:25px
 }
@@ -706,5 +855,20 @@ a {
     border-left: none;
     cursor: pointer;
   }
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: grey;
+  opacity: 1; /* Firefox */
+  font-size: 12px;
+  font-weight: 200;
+
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: red;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: red;
 }
 </style>
