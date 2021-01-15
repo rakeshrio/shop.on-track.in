@@ -1,103 +1,8 @@
 <template>
   <div class="col-md-12 m-0 p-0" style="font-family: Gilroy">
-
-      <div class="col-md-10 m-auto py-5">
-        <div class="col-md-4  m-0 p-0" style="box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; border-radius:25px">  
-            <div class="col-md-12 p-3  m-0 p-0">
-                <div class="col-md-12  mr-0">
-                  <h3 class="text-left mb-0" style="font-family:gilroyf">What Do You Want</h3> 
-                  <h3 class="text-left" style="font-family:gilroyf">To Do Today ?</h3>       
-                  <p class="text-left mt-3 mb-0" style="font-size:14px">Feel free to choose multiple services,</p>
-                  <p class="text-left mb-4"  style="font-size:14px">We are here to help you out with your requirements</p>
-                </div>
-              <div class="col-md-12 my-3 row pr-0 mr-0">
-                <div class="col-md-4">
-                  <div class="card col-md-12 pt-2 m-0 p-0" style="width: 20rem;box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; border-radius:10px; border:none">
-                    <div class="card-body m-0 p-1  col-md-12">
-                      <img src="../assets/scooter.png" alt="" width="60% " >
-                      <p class="mt-2 mb-1" style="font-size:12px">Buy New Bike/Scooter</p>
-                      
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4  " >
-                  <div class="card col-md-12 pt-2 m-0 p-0" style="width: 20rem;box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; border-radius:10px; border:none">
-                    <div class="card-body  m-0 p-1 col-md-12">
-                        <img src="../assets/mc.png" alt="" width="60%" >
-                        <p class="mt-2 mb-1" style="font-size:12px"> Finance Options</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 ">
-                  <div class="card col-md-12 pt-2 m-0 p-0" style="width: 20rem;box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; border-radius:10px; border:none">
-                    <div class="card-body  m-0 p-1 col-md-12">
-                      <img src="../assets/ma.png" alt="" width="60%" >
-                      <p class="mt-2 mb-1" style="font-size:12px">Monthly Bike Rental</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class=" col-12 mb-4 " >
-                <p class="text-left labell mb-0 pb-1 pb-0">NAME <span style="color:red">*</span></p>
-                  <div class="col-12 col-md-12 text-center "  style="box-shadow: 2px 2px 12px #55555530;">
-                    <input list="hosting-plan1" placeholder="FULL NAME" type="text" class="form-control pl-0"  required>  
-                  </div>
-              </div>
-              <div class=" col-12 mb-4 " >
-                <p class="text-left labell mb-0 pb-1 pb-0">DATE OF BIRTH <span style="color:red">*</span></p>
-                  <div class="col-12 col-md-12 text-center "  style="box-shadow: 2px 2px 12px #55555530;">
-                    <input list="hosting-plan1" placeholder="DD/MM/YYYY" type="text" class="form-control pl-0"  required>  
-                  </div>
-              </div>
-              <div class=" col-12 mb-4 " >
-                <p class="text-left labell mb-0 pb-1 pb-0">CONTACT NUMBER <span style="color:red">*</span></p>
-                  <div class="col-12 col-md-12 text-center "  style="box-shadow: 2px 2px 12px #55555530;">
-                    <input list="hosting-plan1" placeholder="+91-XXXXXXXXX" type="text" class="form-control pl-0"  required>  
-                  </div>
-              </div>
-              <div class=" col-12 mb-4 " >
-                <p class="text-left labell mb-0 pb-1 pb-0">EMAIL ADDRESS <span style="color:red">*</span></p>
-                  <div class="col-12 col-md-12 text-center "  style="box-shadow: 2px 2px 12px #55555530;">
-                    <input list="hosting-plan1" placeholder="email@address.com" type="text" class="form-control pl-0"  required>  
-                  </div>
-              </div>
-              
-              <div class=" col-12 m-0 px-3 row " >
-                  <div class="col-md-6 m-0 p-0">
-                    <p class="text-left labell mb-0 pb-1 pb-0">CITY <span style="color:red">*</span></p>
-                    <div class="col-12 col-md-12 text-center "  style="box-shadow: 2px 2px 12px #55555530;">
-                      <select class="form-control m-0 p-0"  >
-                        <option disabled value="">Select City</option>
-                        <option value="Bengaluru">Bengaluru</option>
-                        <option value="Hyderabad">Hyderbabad</option>
-                        <option value="Delhi">Delhi</option>      
-                      </select>
-                    </div>  
-                  </div>
-                  <div class="col-md-6 m-0 p-0">
-                    <p class="text-left labell mb-0 pb-1 pb-0" style="visibility:hidden">CITY <span style="color:red">*</span></p>
-                    <div class="form-check form-check-inline ml-4">
-                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                      <label class="form-check-label text-left" for="inlineRadio1" style="font-size:12px"> INTERESTED IN FINANCE OPTIONS?</label>
-                    </div>
-                  </div>
-              </div>
-            </div>
-            <div class="col-md-12 py-2 mt-3 m-0 p-0" style="background:#4CAF50; color:white ; border-radius:0 0 24px 24px">
-              <h3 class="mb-0" style="font-family:gilroyf">SUBMIT</h3>
-            </div>  
-              
-                
-        </div>                                      
-      </div>                 
-
-
-
-
-
-
-
-
+    <div class="col-md-12  m-0 p-0">
+      <bannerform></bannerform>
+    </div>
     <section class="">
       <div
         class="col-md-12 banner m-0 p-0 col-12"
@@ -185,6 +90,9 @@
         </div>
       </div>
     </section>
+
+   
+
     <!-- <section>
       <div class="col-md-12 banner m-0 p-0 col-12">
           <div class="centered col-12">
@@ -420,16 +328,27 @@
 
 <script>
 import df from "../components/test";
+import bannerform from "../components/bannerform"
+
 export default {
   data() {
     return {
       search: "",
       banners: [],
-      utm_source:''
+      utm_source:'',
+      name:'',
+      dob:'',
+      email:'',
+      servicesList:'',
+      mobile:'',
+      city:'',
+      feature_subscription:''
     };
   },
   components: {
- df
+      df,
+
+    bannerform
   },
   mounted() {
     this.$http
@@ -477,6 +396,40 @@ export default {
             })   
     },
   methods: {
+    submit(){
+     
+      this.$http.post('https://backend-bikex.herokuapp.com/api/shop_outreach',{
+                    name:this.name,
+                    dob:this.dob,
+                    gender:this.gender,
+                    servicesList:this.servicesList,
+                    feature_subscription:this.feature_subscription,
+                    mobile:this.mobile,
+                    city:this.city
+                
+            },
+            {
+                headers: { 'Authorization': 'YwMiRtYxQpVcMsVy1w3Z9==' },
+            }).
+            then(response=>{
+            // this.hasBeenSubmitted = true;
+            this.response = response.body;
+            this.loading = false
+             
+            // this.$swal({
+            //   title:'Your request has been registered.',
+            //   text:'Our team will get in touch with you shortly.'
+            //   })
+            this.success = true
+            // this.$router.push(
+            //   {path:'/thankyou'
+            // })
+            }).catch(error => { 
+                this.message = error.body.msg;
+                this.loading= false
+            })   
+    },
+  
     go(make, existing) {
       if (existing) {
         this.$router.push("/model-by-make/" + make);
@@ -509,7 +462,9 @@ export default {
 .labell{
   font-size:12px;
 };
-
+.xcvb{
+  display: none !important;
+}
 input:focus ~ .floating-label,
 input:not(:focus):valid ~ .floating-label{
   top: -7px;
@@ -812,6 +767,9 @@ a {
   .mob{
     display:none !important
   }
+  .xcvba{
+  display: block !important;
+}
   .font1 {
     font-size: 13px !important;
     line-height: 24px !important;

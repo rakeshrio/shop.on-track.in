@@ -21,6 +21,7 @@ import newtwowheeler from '../components/newtwowheeler'
 import finance from '../components/finance'
 import test from '../components/test'
 import loanagainstvehicle from '../components/loanagainstvehicle'
+import bannerform from '../components/bannerform'
 
 
 Vue.use(VueRouter)
@@ -28,6 +29,7 @@ Vue.use(VueRouter)
 const routes = [
 
   { path: '/models', component: models },
+  { path: '/bannerform', component: bannerform },
   { path: '/test', component: test },
   { path: '/purchase', component: purchase },
   { path: '/cart/:id/:value', component: cart },

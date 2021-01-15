@@ -121,7 +121,7 @@
         </div>
         <hr style="color:white">
         <div class="col-12 my-3">
-           <p class="text-center" style="font-size:12px">© 2020 - Ontrack technologies Pvt Ltd. - All rights reserved</p>
+           <p class="text-center" style="font-size:12px">© 2021 - Ontrack technologies Pvt Ltd. - All rights reserved</p>
         </div>
       </div>
     </div>
