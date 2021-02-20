@@ -18,10 +18,19 @@ import success from '../components/success'
 import purchase from '../components/purchase'
 import buyback from '../components/buyback'
 import newtwowheeler from '../components/newtwowheeler'
+import newtwowheeler2 from '../components/newtwowheeler2'
 import finance from '../components/finance'
 import test from '../components/test'
 import loanagainstvehicle from '../components/loanagainstvehicle'
 import bannerform from '../components/bannerform'
+import calculator from '../components/calculator'
+import buyback2 from '../components/buyback2'
+import pie from '../components/pie'
+import displaytest from '../components/displaytest'
+import testnew from '../components/testnew'
+import play from '../components/play'
+import comparetest from '../components/comparetest'
+import carttest from '../components/carttest'
 
 
 Vue.use(VueRouter)
@@ -29,15 +38,24 @@ Vue.use(VueRouter)
 const routes = [
 
   { path: '/models', component: models },
+  { path: '/pie', component: pie },
+  { path: '/calculator', component: calculator},
+  { path: '/buy-back', component: buyback2 },
+  { path: '/emi', component: calculator },
+  { path: '/play', component: play },
   { path: '/bannerform', component: bannerform },
   { path: '/test', component: test },
+  { path: '/a', component: testnew },
   { path: '/purchase', component: purchase },
   { path: '/cart/:id/:value', component: cart },
   { path: '/display/:id', component: display },
-  { path: '/', component: home,  },
+  { path: '/display2/:id', component: displaytest },
+  { path: '/', component: home},
   { path: '/checkout/:id/:value', component: checkout },
   { path: '/landingpage', component: landingpage },
   { path: '/catalogue', component: catalogue },
+  { path: '/comparetest', component: comparetest },
+  { path: '/carttest', component: carttest },
   { path: '/success/:id', component: success },
 
   // models breakdown
@@ -52,6 +70,7 @@ const routes = [
   { path: '/buyback', component: buyback },
   { path: '/loan-against-vehicle', component: loanagainstvehicle },
   { path: '/new-2-wheelers-loan', component: newtwowheeler},
+  { path: '/new-2-wheelers-loan2', component: newtwowheeler2},
 
 ]
 

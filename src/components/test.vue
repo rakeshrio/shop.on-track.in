@@ -12,7 +12,7 @@
                     <div class="col-md-7 mt-5 ">
                         <div class="col-md-12 mt-3 text-center py-3 m-0 d-flex p-0" style="font-family:gilroyf; color:white">
                         <h5 class="px-2"> No Downpayment <span class="pl-2">|</span> </h5>
-                        <h5 class="px-2"> No Collatarel <span class="pl-2">|</span></h5>
+                        <h5 class="px-2"> No Collateral <span class="pl-2">|</span></h5>
                         <h5 class="px-2"> Lower Interest Rate </h5>
                         </div>
                     </div>

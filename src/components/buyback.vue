@@ -30,13 +30,13 @@
                         </div>
                         <div class=" col-12 mb-4">
                             <div class="col-12 text-center " style="box-shadow: 2px 2px 12px #55555530;">
-                                <input list="hosting-plan2" type="text" class="form-control" placeholder="" v-model="dob" required>
+                                <input list="hosting-plan2" type="date" class="form-control" placeholder="" v-model="dob" required>
                                 <span class="floating-label">DOB (DD-MM-YYYY)</span>
                             </div>
                         </div>
                         <div class=" col-12 mb-4">
                             <div class="col-12 text-center " style="box-shadow: 2px 2px 12px #55555530;">
-                                <input list="hosting-plan99" type="number" class="form-control"  v-model="mobile" required>
+                                <input list="hosting-plan99" type="number" class="form-control" minlength="10" maxlength="10"  v-model="mobile" required>
                                 <span class="floating-label">Mobile Number</span>
                             </div>
                         </div>
@@ -110,8 +110,11 @@
                         </div>
                         <div class="text-center ml-5">
                           <div class="col-12 text-center xcv mt-3"  v-if="!success">
-                              <button  type="button" class="btn  _2iiQB _3qpfi text-center" @click="submit" >Submit</button>
-                              <span v-if="loading" class="spinner-border spinner-border-sm"></span>
+                              <button  type="button" class="btn  _2iiQB _3qpfi text-center" id="rak" @click="submit" >
+                                <span v-if="loading">Loading...</span>
+                                <span v-else>SUBMIT</span>
+                              </button>
+                              <!-- <span v-if="loading" class="spinner-border spinner-border-sm"></span> -->
                           </div>
                         </div> 
                     </div>
@@ -124,18 +127,23 @@
       </div>
        </div>
     </div>
-    <div class="col-md-9 text-left m-auto p-0">
-        <div class="col-md-12 row  mt-5 m-0 p-0" style="height:350px">
+    <!-- <div class="col-md-9 text-left m-auto p-0">
+        <div class="col-md-12 row  mt-5 m-0 p-0" >
           <div class="col-md-6">
             <h4 class="mb-5" style="font-family:gilroyf">Benefits of Buy-Back?</h4>
             <h6 class="mb-4"><span style="font-weight:700; font-size:19px"><img src="../assets/d1.png" alt="" width="50px" height="auto"> Affordability</span> - Cheaper EMI</h6>
             <h6 class="mb-3"><span style="font-weight:700; font-size:19px"><img src="../assets/d2.png" alt="" width="50px" height="auto"> Flexibility</span>  - Option to Return Upgrade or Buy.</h6>
             <h6 class="mb-3"><span style="font-weight:700; font-size:19px"><img src="../assets/d3.png" class="m-0 p-0 mt-3" alt="" width="50px" height="auto"> White Board</span>  - Vehicle Assigned or your name.</h6>
           </div>
-         
         </div>  
-    </div>
+    </div> -->
 
+    <div class="col-md-12 mt-5 pt-5 m-0 p-0">
+      
+      <!-- <div class="col-md-12 m-0 p-0">
+        <calc></calc>
+      </div> -->
+    </div>
 
     <!-- gradient hiw -->
     <div class="col-md-12 col-12 m-0 p-0 pt-4 pb-3 text-center" style=" background-image: linear-gradient(261deg,#f69b12,#ed6a10); ">
@@ -281,11 +289,16 @@
 <script>
 import { required, minLength, between } from 'vuelidate/lib/validators'
 // import axios from 'axios'
+
+import { Doughnut } from 'vue-chartjs'
 import buybackmobile from '../components/buybackmobile'
+// import calc from '../components/calculator'
 
  export default {
+   extends: Doughnut,
     data(){
         return{
+               
                 name:'',
                 dob:'',
                 gender:'',
@@ -303,14 +316,35 @@ import buybackmobile from '../components/buybackmobile'
                
                 }
             },
+            
   components:{
     buybackmobile,
+    // calc
     
 
   },
   created(){
-    this.source = this.$route.query.utm_source || 'buyback-(Organic)'
-    },
+            var fbclid = this.$route.query.fbclid
+            var gclid = this.$route.query.gclid
+            var dclid= this.$route.query.dclid
+            var gclsrc= this.$route.query.gclsrc
+            
+       
+            if(fbclid){
+            this.source = "facebook"
+            }else if(gclid){
+            this.source = 'google'
+            }
+            else if(dclid){
+            this.source = 'google'
+            }
+            else if(gclsrc){
+            this.source = 'google'
+            }
+            else{
+            this.source = "Buy-Back(Organic)"
+            }
+            },
   validations: {
     name: {
       required,
@@ -321,6 +355,10 @@ import buybackmobile from '../components/buybackmobile'
     }
   },
     methods:{
+      dataFormat: function(a, b) {
+            if(b) return b + "%";
+            return a;
+        },
         xs() {
             var elmnt = document.getElementById("form");
             elmnt.scrollIntoView();
@@ -375,6 +413,7 @@ import buybackmobile from '../components/buybackmobile'
   //   }
   // },
  submit(){
+      
       this.loading = true
       this.$http.post('https://backend-bikex.herokuapp.com/api/ontrack-loan-enquiry',{
                 
@@ -426,6 +465,9 @@ import buybackmobile from '../components/buybackmobile'
 .xcv button {
     width: 100%;
     
+}
+input[type=date]:required:invalid::-webkit-datetime-edit {
+    color: transparent;
 }
 @font-face {
   font-family: Gilroyf;

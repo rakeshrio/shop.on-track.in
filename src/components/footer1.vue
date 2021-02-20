@@ -34,7 +34,10 @@
       </div>
       <div class="col-md-3 text-right col-12" style="justify-content:right">
         <h1 class="cal">FINANCING PARTNER</h1>
-        <a href="https://wheelsemi.com/"><img src="https://wheelsemi.com/resources/frontend_v2/images/wheels_emi_logo.png" alt="" height="50px" width="auto"></a> 
+        <div class="col-md-12 m-0 p-0 d-flex" style="justify-content:space-between">
+          <a href="https://wheelsemi.com/"><img src="https://wheelsemi.com/resources/frontend_v2/images/wheels_emi_logo.png" alt="" height="50px" width="auto"></a> 
+          <a href="https://www.idfcfirstbank.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/IDFC_First_Bank_logo.jpg" alt="" height="50px" width="auto"></a>
+        </div>
       </div>   
     </div>
     </div>

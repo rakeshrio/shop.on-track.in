@@ -32,9 +32,12 @@
         <a href="mailto:info@on-track.in"> <p class="dfh" style="font-size:14px;  letter-spacing:0.5px; color:#999999">info@on-track.in</p></a>
         <a href="tel:+91-9148518401">  <p class="dfh" style="font-size:14px;  letter-spacing:0.5px; color:#999999">+91 91485 18401</p></a>
       </div>
-      <div class="col-md-3 text-right col-12" style="justify-content:right">
+      <div class="col-md-3 text-right col-12" >
         <h1 class="cal">FINANCING PARTNER</h1>
-        <a href="https://wheelsemi.com/"><img src="https://wheelsemi.com/resources/frontend_v2/images/wheels_emi_logo.png" alt="" height="50px" width="auto"></a> 
+        <div class="col-md-12 d-flex ml-3 pr-0 mr-0" style="justify-content: space-evenly;">
+          <a href="https://wheelsemi.com/"><img src="https://wheelsemi.com/resources/frontend_v2/images/wheels_emi_logo.png" alt="" height="35px" width="auto"></a> 
+          <a href="https://www.idfcfirstbank.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/IDFC_First_Bank_logo.jpg" alt="" height="35px" width="auto"></a>
+        </div>
       </div>   
     </div>
     </div>
@@ -56,7 +59,7 @@
         </div>
         <div class="col-md-6 m-0  p-0">
             <p class="text-right" style="font-weight:bolder;cursor:pointer;padding-top:50px" @click="scrollToTop"><i class="fa fa-arrow-up pr-2" style="color:white" aria-hidden="true"></i> BACK TO TOP</p>
-            <p class="text-right pt-2" >© 2020 - Ontrack Technologies Pvt. Ltd. - All rights reserved</p>
+            <p class="text-right pt-2" >© 2021 - Ontrack Technologies Pvt. Ltd. - All rights reserved</p>
         </div>
     </div>
     </div>
@@ -95,7 +98,10 @@
           
           <div class="text-left  col-12" >
             <h1 class="cal">FINANCING PARTNER</h1>
-            <a href="https://wheelsemi.com/"><img src="https://wheelsemi.com/resources/frontend_v2/images/wheels_emi_logo.png" alt="" height="50px" width="auto"></a> 
+            <div class="col-12 d-flex mx-0 px-0" style="justify-content:space-between">
+              <a href="https://wheelsemi.com/"><img src="https://wheelsemi.com/resources/frontend_v2/images/wheels_emi_logo.png" alt="" height="50px" width="auto"></a> 
+            <a href="https://www.idfcfirstbank.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/IDFC_First_Bank_logo.jpg" alt="" height="50px" width="auto"></a>
+            </div>
           </div>
         </div>
       </div>

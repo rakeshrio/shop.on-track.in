@@ -3,10 +3,11 @@
     <div class="col-md-9 p-0" style="margin:0 auto">
       <h1 class="font2 mb-4 text-left" style="">Order Summary</h1>
 
+     
       <div class="row col-md-12 m-0 p-0">
        
         <div class="col-md-8 m-0 p-0">
-            <!-- <div class="col-md-12 p-2 top-head m-0 p-0 d-flex justify-content-between">
+            <!-- <div class="col-md-12 p-2 to p-head m-0 p-0 d-flex justify-content-between">
             </div> -->
             <div class="p-2 col-md-12 m-0 p-0">
             <div class="row col-md-12">
@@ -32,7 +33,8 @@
                 {{ cartdata[0].selectedItem.price | currency }}
                 </h1>
             </div>
-            <p><strong>Price Break-Down</strong></p>
+            <div v-if="currentSelected[0].additional_cost.length>1">
+              <p><strong>Price Break-Down</strong></p>
             <div class="col-md-12 mb-5" style="background:#f2f2f2; border-radius:5px">
               <div
                 class="d-flex m-0 p-0 px-2 py-1 col-md-12 justify-content-between "
@@ -47,7 +49,9 @@
                 </p>
               </div>
             </div>
+            </div>
 
+<img src="https://2giacm20c02m4btu7z2sal9f-wpengine.netdna-ssl.com/wp-content/uploads/2018/12/accepted-payment-methods-2.png" width="50%" height="auto" alt="">
 
             <div class="col-md-12 m-0 p-0  justify-content-between " v-for="(data, index) in cartdata[0].addons" :key="index">
                 <div class="d-flex m-0 p-0">
@@ -65,11 +69,15 @@
     
                 </div>
             </div>
+            <div class="col-md-12 text-left" >
+            
+        </div>
             <!-- <div class="p-1 py-2 text-center" role="alert" style="background:#ECECFB; color:#4E44D8">
               The price is inclusive of GST 
             </div> -->
             </div>
         </div>
+        
           <div class="col-md-4  mt-2 m-0 p-0">
             <div class="card p-3" style="box-shadow: 0 5px 10px 0 rgba(0,89,163,.15); border:none; border-radius:14px;">
                 <p class=""><strong>Your Total</strong></p>
@@ -80,8 +88,20 @@
         </div>
       </div>
 
-   
-      <div class="row col-md-9 mt-3 p-0 m-0">
+
+        <div class="fixed-bottom display-mobile1 mobile-panel col-12 m-0 p-0 py-2">
+            <div class="col-12 row m-0 p-0">
+              <div class="col-12 p-0 m-0 text-center" @click="goto" >
+                <button class="start-purchase py-3 m-0">Checkout</button>
+              </div>
+            </div>
+        </div>
+
+      <div class="col-md-6 text-left">
+        <p><span class="badge badge-danger">{{booking_type.booking_type}}</span></p>
+        <p class="badge">Amount payable at store {{priceToPayAtStore | currency}} at the time of delivery</p>
+      </div>      
+      <div class="row col-md-9 mt-3 p-0 m-0 display-mobile">
             <div class="p-1 py-2 col-md-6 col-12 text-center" role="alert" style="background:#ECECFB; color:#4E44D8">
               The price is inclusive of GST 
             </div>
@@ -139,13 +159,16 @@ export default {
       currentSelected: [],
       currentPrice: 0,
        loading: false,
+       booking_type:[]
     };
   },
   methods: {
     goto() {
-      this.$router.push(
-        "/checkout/" + this.$route.params.id + "/" + this.$route.params.value
-      );
+      // this.$router.push(
+      //   "/checkout/" + this.$route.params.id + "/" + this.booking_type.booking_type
+      // );
+
+      this.$router.push({ path: "/checkout/" + this.$route.params.id + "/" + this.currentSelected[0].id, query: { booking_type: this.booking_type.booking_type }})
     },
     fetchDetail() {
       this.$store.dispatch("getModelsWithoutDealer", {
@@ -158,6 +181,7 @@ export default {
     window.console.log(this.cartdata);
     this.fetchDetail();
     this.superset = this.$route.params.value;
+    this.booking_type = this.$route.query
 
     axios
       .get(
@@ -185,6 +209,19 @@ export default {
     },
   },
   computed: {
+    priceToPayAtStore(){
+      if(this.booking_type.booking_type == 'Book bike at rupees Rs. 1000'){
+        return this.totalPrice - Number(1000)
+      }
+      else if(this.booking_type.booking_type == 'book bike at rupees Rs. 20000'){
+        return this.totalPrice - Number(20000)
+      }
+      else if(this.booking_type.booking_type == 'book bike at rupees Rs. 30000'){
+        return this.totalPrice - Number(30000)
+      }else{
+        return 0
+      }
+    },
     cartdata() {
       return JSON.parse(localStorage.getItem('cart'))
     },
@@ -210,19 +247,52 @@ export default {
   font-family: Gilroyf;
   src: url(../assets/font/Gilroy-ExtraBold.otf);
 }
+.display-mobile{
+  display: none ;
+}
 .font2 {
   font-size: 18px;
   font-weight: bold;
   font-family: Gilroyf;
   color: #484848;
 }
-.btm{
-  margin-bottom:500px;
+.start-purchase{
+  border: 1px solid hsl(28, 91%, 54%);
+  background-color: #F75D34;
+  padding: 0px 20px;
+  width: 90%;
+  font-size: 12px;
+  border-radius: 0px;
+  color:white;
+  font-weight: 700;
 }
+.reserve{
+  border: 1px solid #f5821f;
+  background-color: #ffffff;
+  padding: 0px 20px;
+  width: 90%;
+  font-size: 12px;
+  border-radius: 0px;
+  font-weight: 700;
+
+}
+.display-mobile{
+  display: block;
+}
+.display-mobile1{
+  display: none ;
+}
+
 @media all and (max-width: 600px) {
   .bnm {
     display: none !important;
   }
+  .display-mobile{
+  display: none !important;
+}
+  .display-mobile1{
+  display: block !important;
+}
 }
 .labels {
   font-size: 13px;

@@ -11,7 +11,16 @@ import { BootstrapVue, IconsPlugin, } from 'bootstrap-vue'
 import { CarouselPlugin } from 'bootstrap-vue'
 import { BCarousel } from 'bootstrap-vue'
 import Vuelidate from 'vuelidate'
-
+import VueGtag from "vue-gtag";
+import VueGraph from 'vue-graph'
+import VueGeolocation from 'vue-browser-geolocation';
+Vue.use(VueGeolocation);
+ 
+Vue.use(VueGraph)
+Vue.use(VueGtag, {
+  config: { id: "AW-837104235",
+           }
+});
 
 Vue.component('b-carousel', BCarousel)
 Vue.use(Vuelidate)

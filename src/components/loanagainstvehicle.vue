@@ -34,13 +34,13 @@
                                     </div>
                                     <div class="col-md-12 col-12 mb-4">
                                         <div class="col-12 text-center " style="box-shadow: 2px 2px 12px #55555530;">
-                                            <input list="hosting-plan2" type="text" class="form-control" placeholder="" v-model="dob" required>
-                                            <span class="floating-label">DOB (DD-MM-YYYY)</span>
+                                            <input list="hosting-plan2" type="date"  class="form-control " placeholder="" v-model="dob" required>
+                                            <span class="floating-label">Dob(dd-mm-yyyy)</span>
                                         </div>
                                     </div>
                                     <div class="col-md-12 col-12 mb-4">
                                         <div class="col-12 text-center " style="box-shadow: 2px 2px 12px #55555530;">
-                                            <input list="hosting-plan99" type="number" class="form-control"  v-model="mobile" required>
+                                            <input list="hosting-plan99" type="number" min="10" maxlength="10"  class="form-control"  v-model="mobile" required>
                                             <span class="floating-label">Mobile Number</span>
                                         </div>
                                     </div>
@@ -143,7 +143,10 @@
                                     <button class="btun1" @click.prevent="prev()">Previous</button>
                                 </div>
                                 <div class="col-md-4 col-6">
-                                    <button class="btun2" @click="submit">Submit</button>
+                                    <button class="btun2" id="rak"  @click="submit">
+                                        <span v-if="loading">Loading...</span>
+                                        <span v-else>SUBMIT</span>
+                                    </button>
                                 </div>
                             </div>
 
@@ -278,7 +281,7 @@
 export default {
     data(){
         return{
-            step:1,
+                step:1,
                 fullname:'',
                 year_of_purchase:'',
                 registration_no:'',
@@ -294,11 +297,31 @@ export default {
                 message:'',
                 success:false,
                 source: '',
-                hasBeenSubmitted: false
-                }
+                hasBeenSubmitted: false,
+                clicked:false
+              }
             },
-         created(){
-            this.source = this.$route.query.utm_source || 'loan-against-vehicle (Organic)'
+          created(){
+            var fbclid = this.$route.query.fbclid
+            var gclid = this.$route.query.gclid
+            var dclid= this.$route.query.dclid
+            var gclsrc= this.$route.query.gclsrc
+            
+       
+            if(fbclid){
+            this.source = "facebook"
+            }else if(gclid){
+            this.source = 'google'
+            }
+            else if(dclid){
+            this.source = 'google'
+            }
+            else if(gclsrc){
+            this.source = 'google'
+            }
+            else{
+            this.source = "Loan-Against-Two-Wheelers(Organic)"
+            }
             },
     methods:{
         topFunction() {
@@ -358,9 +381,10 @@ export default {
                     this.step++;
                 },
                 submit(){
+                  
+                  
                     this.loading = true
-                    this.$http.post('https://backend-bikex.herokuapp.com/api/loan_against_vehicle',{
-                        
+                    this.$http.post('https://backend-bikex.herokuapp.com/api/loan_against_vehicle',{              
                         fullname:this.fullname,
                         dob:this.dob,
                         gender:this.gender,
@@ -372,29 +396,23 @@ export default {
                         registration_no:this.registration_no,
                         year_of_purchase:this.year_of_purchase,
                         source:this.source
-
                         },
                         {
                         headers: { 'Authorization': 'YwMiRtYxQpVcMsVy1w3Z9==' }
                         }).
-            then(response=>{
-            this.hasBeenSubmitted = true;
-            this.response = response.body;
-            this.loading = false
-             
-            this.$swal({
-              title:'Your request has been registered.',
-              text:'Our team will get in touch with you shortly.'
-              })
-            this.success = true
-            this.$router.push(
-              {path:'/thankyou'
-            })
-            }).catch(error => { 
-                this.message = error.body.msg;
-                this.loading= false
-            })   
-    }
+                        then(response=>{
+                        this.hasBeenSubmitted = true;
+                        this.response = response.body;
+                        this.loading = false
+                        this.success = true
+                        }).catch(error => { 
+                            this.message = error.body.msg;
+                            this.loading= false
+                        }) 
+                        
+                }    
+    
+    
   },
      computed:{
      error(){
@@ -409,9 +427,10 @@ export default {
 </script>
 
 <style scoped>
-.cvv{
- font-family: gilroy !important;
+input[type=date]:required:invalid::-webkit-datetime-edit {
+    color: transparent;
 }
+
 @font-face {
   font-family: Gilroyf;
   src: url(../assets/font/Gilroy-ExtraBold.otf);

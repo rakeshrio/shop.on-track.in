@@ -31,13 +31,13 @@
                                         </div>
                                         <div class="col-md-12 col-12 mb-4">
                                             <div class="col-12 text-center " style="box-shadow: 2px 2px 12px #55555530;">
-                                                <input list="hosting-plan2" type="text" class="form-control" placeholder="" v-model="dob" required>
+                                                <input list="hosting-plan2" type="date" class="form-control" placeholder="" v-model="dob" required>
                                                 <span class="floating-label">DOB (DD-MM-YYYY)</span>
                                             </div>
                                         </div>
                                         <div class="col-md-12 col-12 mb-4">
                                             <div class="col-12 text-center " style="box-shadow: 2px 2px 12px #55555530;">
-                                                <input list="hosting-plan99" type="number" class="form-control"  v-model="mobile" required>
+                                                <input  type="number" class="form-control" minlength="10" maxlength="10" v-model="mobile" required>
                                                 <span class="floating-label">Mobile Number</span>
                                             </div>
                                         </div>
@@ -121,7 +121,10 @@
                                                 <button class="btun1" @click.prevent="step--">Previous</button>
                                             </div>
                                             <div class="col-md-4 col-6">
-                                                <button class="btun2" @click="submit">Submit</button>
+                                                <button class="btun2" @click="submit"  >
+                                                    <span v-if="loading">Loading...</span>
+                                                    <span v-else>SUBMIT</span>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -177,17 +180,48 @@ export default {
                 message:'',
                 success:false,
                 source: '',
-                hasBeenSubmitted: false
+                isLoading: null,
+                hasBeenSubmitted: false,
+                isActive: true,
+                clicked: false
                 }
             },
-            created(){
-                this.source = this.$route.query.utm_source || 'new-two-wheeler(Organic)'
+           created(){
+            var fbclid = this.$route.query.fbclid
+            var gclid = this.$route.query.gclid
+            var dclid= this.$route.query.dclid
+            var gclsrc= this.$route.query.gclsrc
+            
+       
+            if(fbclid){
+            this.source = "facebook"
+            }else if(gclid){
+            this.source = 'google'
+            }
+            else if(dclid){
+            this.source = 'google'
+            }
+            else if(gclsrc){
+            this.source = 'google'
+            }
+            else{
+            this.source = "New-Two-Wheelers-Loan(Organic)"
+            }
             },
             methods:{            
                 submit(){
+                    
+                    setTimeout(()=>{
+                    document.querySelector("#rak").style.display = "none";  
+                    this.clicked = true
+                    },3000);
+                    
                     this.loading = true
-                    this.$http.post('https://backend-bikex.herokuapp.com/api/bike_loan',{
-                        
+                    this.$gtag.event('conversion', {
+                        'send_to': 'AW-837104235/NwQhCIGVrvEBEOvklI8D',
+                    })
+                    this.isLoading = true,
+                    this.$http.post('https://backend-bikex.herokuapp.com/api/bike_loan',{       
                         fullname:this.fullname,
                         dob:this.dob,
                         gender:this.gender,
@@ -202,9 +236,14 @@ export default {
                             headers: { 'Authorization': 'YwMiRtYxQpVcMsVy1w3Z9==' },
                         }).
                 then(response=>{
+                 document.querySelector("#rak").style.display = "none";  
                 this.hasBeenSubmitted = true;
                 this.response = response.body;
+                // setTimeout(() => {
+                //         this.isLoading = false
+                //     }, 1000)
                 this.loading = false
+
                 
                 // this.$swal({
                 // title:'Your request has been registered.',
@@ -242,15 +281,13 @@ export default {
   font-family: Gilroy;
   src: url(../assets/font/Gilroy-Light.otf);
 }
-
+input[type=date]:required:invalid::-webkit-datetime-edit {
+    color: transparent;
+}
 .bg-img {
-  /* The image used */
+
   background-image: url("https://wheelsemi.com/uploads/slider/New-Two-Wheeler-Loans.jpg");
-
-  /* Control the height of the image */
   min-height: 480px;
-
-  /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

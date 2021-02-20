@@ -54,6 +54,7 @@ export default new Vuex.Store({
     },
     COMPARE(state, value){
       state.compare = value
+      
     }
 
   },

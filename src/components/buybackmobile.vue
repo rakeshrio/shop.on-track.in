@@ -18,33 +18,30 @@
                     <div v-else class="form row pt-3" >
                         
                         <div class="col-md-3  text-center col-12 mb-4 "  >
-                            <div class="col-12 text-center " style="box-shadow: 2px 2px 12px #55555530;" :class="{invalid: $v.name.$error}">
+                            <div class="col-12 text-center " style="box-shadow: 2px 2px 12px #55555530;" >
                                 <input 
-                                list="hosting-plan1" type="text" class="form-control" placeholder="FullName"  @blur="$v.name.$touch()" v-model="name" required>  
+                                list="hosting-plan1" type="text" class="form-control" placeholder="FullName"   v-model="name" required>  
                                 <!-- <span class="floating-label">Full Name</span> -->
                             </div>
                         </div>
-                        <p style="font-size:10px; color:red; padding-left:15px" v-if="$v.name.required">Please Enter you Name.</p>
-                        <p style="font-size:10px; color:red; padding-left:15px" v-if="!$v.name.minLength" >You must have at least {{ $v.name.$params.minLength.min }} letters.</p>
-
-
+                       
                         <div class="col-md-3 col-12 mb-4" >
-                            <div class="col-12 text-center " style="box-shadow: 2px 2px 12px #55555530;" :class="{invalid: $v.dob.$error}">
-                                <input list="hosting-plan2" type="text" class="form-control" placeholder="DOB (DD-MM-YYYY)"  @blur="$v.dob.$touch()" v-model="dob" required>
+                            <div class="col-12 text-center " style="box-shadow: 2px 2px 12px #55555530;" >
+                                <input list="hosting-plan2" type="date" class="form-control" placeholder="DOB (DD-MM-YYYY)"   v-model="dob" required>
                                 <!-- <span class="floating-label">DOB (DD-MM-YYYY)</span> -->
                             </div>
                         </div>
                         <div class="col-md-3 col-12 mb-4" >
-                            <div class="col-12 text-center " style="box-shadow: 2px 2px 12px #55555530;" :class="{invalid: $v.mobile.$error}">
-                                <input list="hosting-plan99" type="number" placeholder="Mobile Number" class="form-control" @blur="$v.mobile.$touch()" v-model.number="mobile" required>
+                            <div class="col-12 text-center " style="box-shadow: 2px 2px 12px #55555530;" >
+                                <input list="hosting-plan99" type="number" placeholder="Mobile Number" class="form-control" minlength="10" maxlength="10" v-model.number="mobile" required>
                                 <!-- <span class="floating-label">Mobile Number</span> -->
                             </div>
                         </div>
-                        <p class=""  v-if="$v.mobile.$error">Please enter correct 10 digits number</p>
+                     
 
-                        <div class="col-12 mb-4 text-center " :class="{invalid: $v.gender.$error}">                
+                        <div class="col-12 mb-4 text-center ">                
                             <div class="col-12 text-center " style="box-shadow: 2px 2px 12px #55555530;"> 
-                                <select class="form-control" id="exampleFormControlSelect1" v-model="gender"  @blur="$v.gender.$touch()">
+                                <select class="form-control" id="exampleFormControlSelect1" v-model="gender"  >
                                   <option disabled value="">Select Gender</option>
                                   <option value="Male">Male</option>
                                   <option value="Female">Female</option>
@@ -54,7 +51,7 @@
                         </div>
                         <div class="col-md-3 col-12 mb-4">
                             <div class="col-12 text-center " style="box-shadow: 2px 2px 12px #55555530;">   
-                                    <select class="form-control" id="exampleFormControlSelect1" v-model="city" @blur="$v.city.$touch()">
+                                    <select class="form-control" id="exampleFormControlSelect1" v-model="city" >
                                         <option disabled value="">Select City</option>
                                         <option value="Bengaluru">Bengaluru</option>
                                         <option value="Hyderabad">Hyderbabad</option>
@@ -64,7 +61,7 @@
                         </div>
                         <div class="col-12 mb-4 text-center ">                
                             <div class="col-12 text-center " style="box-shadow: 2px 2px 12px #55555530;"> 
-                                 <select class="form-control" id="exampleFormControlSelect1" v-model="vehicle_name" @blur="$v.vehicle_name.$touch()">
+                                 <select class="form-control" id="exampleFormControlSelect1" v-model="vehicle_name">
                                   <option disabled value="">Select Vehicle</option>
                                   <option value="Honda Dio">Honda Dio</option>
                                   <option value="Honda Activa">Honda Activa</option>
@@ -80,12 +77,12 @@
                                     <p class=""><strong style="color:grey">Aadhar Card</strong></p>
                                     <div class="form-check-inline">
                                         <label class="form-check-label">
-                                            <input type="radio" @blur="$v.aadhar_card.$touch()" v-model="aadhar_card" value="yes" class="form-check-input" name="optradio1">Yes
+                                            <input type="radio"  v-model="aadhar_card" value="yes" class="form-check-input" name="optradio1">Yes
                                         </label>
                                     </div>
                                     <div class="form-check-inline">
                                         <label class="form-check-label">
-                                            <input type="radio" v-model="aadhar_card" @blur="$v.aadhar_card.$touch()" value="no" class="form-check-input" name="optradio1">No
+                                            <input type="radio" v-model="aadhar_card" value="no" class="form-check-input" name="optradio1">No
                                         </label>
                                     </div>
                                 </div>
@@ -93,12 +90,12 @@
                                     <p class=""><strong style="color:grey">PAN Card</strong></p>
                                     <div class="form-check-inline">
                                         <label class="form-check-label">
-                                            <input type="radio" @blur="$v.pancard.$touch()" v-model="pancard" class="form-check-input1" value="yes" name="optradio"> Yes
+                                            <input type="radio" v-model="pancard" class="form-check-input1" value="yes" name="optradio"> Yes
                                         </label>
                                     </div>
                                     <div class="form-check-inline">
                                         <label class="form-check-label">
-                                            <input type="radio" @blur="$v.pancard.$touch()" v-model="pancard" class="form-check-input1" value="no" name="optradio" > No
+                                            <input type="radio" v-model="pancard" class="form-check-input1" value="no" name="optradio" > No
                                         </label>
                                     </div>
                                 </div>
@@ -110,8 +107,11 @@
                                 <p class="text-center pb-1"  style="color:red" v-if="message">{{message}}</p>
                             </div>
                                 <div class="col-12 text-center xcv mt-3"  v-if="!success">
-                                    <button  type="button" class="btn  _2iiQB _3qpfi text-center"  :disabled="$v.$invalid" style="cursor:pointer" @click="submit" >Submit</button>
-                                    <span v-if="loading" class="spinner-border spinner-border-sm"></span>
+                                    <button  type="button" class="btn  _2iiQB _3qpfi text-center"  style="cursor:pointer" id="rak" @click="submit" >
+                                        <span v-if="loading">Loading...</span>
+                                        <span v-else>Submit</span>
+                                    </button>
+
                                 </div>
                             </div>  
                         </div>  
@@ -298,7 +298,7 @@
 
 <script>
 // import axios from 'axios'
-import { required,  numeric, minLength, maxLength   } from 'vuelidate/lib/validators'
+// import { required,  numeric, minLength, maxLength   } from 'vuelidate/lib/validators'
 export default {
     data(){
         return{
@@ -321,37 +321,29 @@ export default {
                 }
             },
           
-            validations:{
-                name:{
-                    required,
-                    minLength: minLength(5)
-                },
-                mobile:{
-                    required,
-                    numeric,
-                    minLength: minLength(10),
-                    maxLength : maxLength(10)
-                 },
-                 gender:{
-                     required
-                 },
-                 dob:{
-                    required,
-                    numeric,
-                 },
-                 vehicle_name:{
-                     required
-                 },
-                 city:{
-                     required
-                 },
-                 pancard:{
-                     required
-                 },
-                 aadhar_card:{
-                     required
-                 }
-                },
+        created(){
+            var fbclid = this.$route.query.fbclid
+            var gclid = this.$route.query.gclid
+            var dclid= this.$route.query.dclid
+            var gclsrc= this.$route.query.gclsrc
+            
+       
+            if(fbclid){
+            this.source = "facebook"
+            }else if(gclid){
+            this.source = 'google'
+            }
+            else if(dclid){
+            this.source = 'google'
+            }
+            else if(gclsrc){
+            this.source = 'google'
+            }
+            else{
+            this.source = "Buy-Back(Organic)"
+            }
+        },    
+                
     methods:{
         topFunction() {
             var elmnt = document.getElementById("form");
@@ -414,6 +406,7 @@ export default {
 //     }
 //   },
  submit(){
+   
       this.loading = true
       this.$http.post('https://backend-bikex.herokuapp.com/api/ontrack-loan-enquiry',{
                     name:this.name,
@@ -448,6 +441,7 @@ export default {
             })   
     }
   },
+  
      computed:{
      error(){
          if(this.name ==""||this.mobile==""||this.vehicle_name==""||this.aadhar_card==""||this.pancard ==""||this.dob==""||this.gender==""||this.city==""){
@@ -466,6 +460,7 @@ export default {
  font-weight: 700;
 
 }
+
 .invalid{
     color:red;
     border:1px solid red

@@ -1,10 +1,10 @@
 <template>
 <div>
-  <div class="col-md-12 col-12  m-0 p-0" style="box-shadow: 0 4px 12px 0 rgba(0,0,0,.05);">
+  <div class="col-md-12 m-auto col-12   p-0" style="box-shadow: 0 4px 12px 0 rgba(0,0,0,.05);">
     <div class="col-md-12 m-0 p-0 nav-lap" style="border-bottom:50px solid #4e44e8">
     <nav class="navbar navbar-expand-sm  mt-0 pt-0 pb-0 mb-0" >
       <div class="col-md-12 col-12 m-0 p-0 d-inline">
-           <div class="col-md-9 row" style="margin:0 auto;">
+           <div class="col-md-10 row" style="margin:0 auto;">
                 <div class="col-md-4 m-0 p-0">
                         <div class="col-md-6 m-0 p-0">
                            <a href="https://on-track.in"><img class="logo-sticky pt-3" src="https://on-track.in/wp-content/uploads/2018/10/logo.svg"></a>

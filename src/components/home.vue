@@ -1,8 +1,8 @@
 <template>
   <div class="col-md-12 m-0 p-0" style="font-family: Gilroy">
-    <div class="col-md-12  m-0 p-0">
+    <!-- <div class="col-md-12  m-0 p-0">
       <bannerform></bannerform>
-    </div>
+    </div> -->
     <section class="">
       <div
         class="col-md-12 banner m-0 p-0 col-12"
@@ -91,7 +91,15 @@
       </div>
     </section>
 
-   
+   <div class="col-md-12 col-12 mt-5">
+      <h6 style="font-family:gilroyf">Trusted Bank Partners</h6>
+      <div class="col-md-5 col-12 m-auto ">
+          <div class="col-md-6 m-auto pt-4 d-flex">
+            <img src="https://wheelsemi.com/resources/frontend_v2/images/wheels_emi_logo.png" alt="" width="auto" height="40px">
+            <img class="ml-5" src="https://upload.wikimedia.org/wikipedia/commons/7/7b/IDFC_First_Bank_logo.jpg" alt=""  width="auto" height="40px">
+          </div>
+      </div>
+   </div>
 
     <!-- <section>
       <div class="col-md-12 banner m-0 p-0 col-12">
@@ -163,7 +171,7 @@
 
       <div class="col-md-12 m-0 my-5 p-0" >
         <div
-          class="col-md-9 m-auto text-left p-4 py-5"
+          class="col-md-9 m-auto text-left pb-5 px-4"
           style="box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; border-radius:20px"
         >
           <h2 class="font2 mb-3">Active Brands</h2>
@@ -328,7 +336,7 @@
 
 <script>
 import df from "../components/test";
-import bannerform from "../components/bannerform"
+// import bannerform from "../components/bannerform"
 
 export default {
   data() {
@@ -348,7 +356,7 @@ export default {
   components: {
       df,
 
-    bannerform
+    // bannerform
   },
   mounted() {
     this.$http
@@ -382,7 +390,7 @@ export default {
       return this.$store.state.getAllBrands;
     },
   },
-  created() {
+  created() {    
     this.$store.dispatch("getModels");
     this.$store.dispatch("getAllBrands");
 
@@ -395,9 +403,9 @@ export default {
                 this.message = error.body.msg;  
             })   
     },
+  
   methods: {
     submit(){
-     
       this.$http.post('https://backend-bikex.herokuapp.com/api/shop_outreach',{
                     name:this.name,
                     dob:this.dob,

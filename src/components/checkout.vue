@@ -1,133 +1,152 @@
 <template>
-  <div class="col-md-12 col-12 " style="overflow:hidden">
+  <div class="col-md-12 m-0 mb-5 p-0" style="">
+      <div class="col-md-12 row">
+          <div class="col-md-8">
+
+              <div class="col-md-12  text-left m-3 p-2 " style="box-shadow: 0 1px 12px rgba(51,51,51,.12941)!important; border-radius:10px">
+                    <div class="col-md-12 mt-2 mb-5">
+                        <h3 class="mb-2" style="font-family:gilroyf; color:#1976D2">My Order</h3>
+                        <hr class="mb-5">
+                        <div class="col-md-12 py-3 mb-3" style="box-shadow: 0 1px 12px rgba(51,51,51,.12941)!important; border-radius:10px">
+                            <span><img src="../assets/number-one.png" alt="" class="widt" height="auto"><strong class="ml-3"> Customer</strong></span> 
+                            <div class="form-row cvbb my-3" v-if="step==1">
+    
+                                <div class="form__group mb-3 col-md-6 col-12">
+                                    <input type="text" v-model="first_name" class="form__input" id="name" placeholder="Full name" required="" />
+                                    
+                                </div>
+                                <div class="form__group mb-3 col-md-6 col-12">  
+                                    <input type="text" v-model="last_name" class="form__input" id="inputPassword4" placeholder="Last name">
+                                   
+                                </div>
+                                <div class="form__group mb-3 col-md-6 col-12">
+                                    
+                                    <input type="number" v-model="phone_number" placeholder="Pincode" class="form__input" id="inputZip">
+                                    
+                                </div>
+                                <div class="form__group mb-3   col-md-6 col-12">
+                                    
+                                    <input type="email" v-model="email"  class="form__input" placeholder="Email Address" >
+                                    
+                                </div>
+                                <div class="col-md-4  ml-2 p-2 text-center" style="background:#4e44e8">
+                                    <button @click="next" style="background:#4e44e8;color:white;border:none">Next</button>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+              
+                        <div class="col-md-12 py-3 mb-3" style="box-shadow: 0 1px 12px rgba(51,51,51,.12941)!important; border-radius:10px">
+                            <span><img src="../assets/number-2.png" alt="" class="widt"  height="auto"> <strong class="ml-3"> Shipping</strong></span>
+                            
+                            <div class="form-row my-3 cvbb" v-if="step==2">
+                                <div class="form__group col-md-6 mb-3  col-12">    
+                                    <input type="text" v-model="street_address"  class="form__input" placeholder="Street Address">
+                                    
+                                </div>
+                                <div class="form__group col-md-6 mb-3  col-12">                                   
+                                    <input type="text" v-model="city"  class="form__input" id="inputZip" placeholder="City/Town">
+                                </div>
+                                <div class="form__group  col-md-6 mb-3   col-12">
+                                    <input type="text" v-model="state"  class="form__input" id="inputZip" placeholder="State">
+                                </div>
+                                <div class="form__group  col-md-6 mb-3  col-12">    
+                                    <input type="number" v-model="post_code"  class="form__input" id="inputZip" placeholder="Pincode">
+                                </div>
+                                <div class="col-md-4 p-2 text-center" style="background:#4e44e8">
+                                    <button @click="next" style="background:#4e44e8;color:white;border:none">Next</button>
+                                </div>
+                            </div>  
+                               
+                        </div>
+                   
+                        <div class="col-md-12 py-3" style="box-shadow: 0 1px 12px rgba(51,51,51,.12941)!important; border-radius:10px">
+                            <span><img src="../assets/number-3.png" alt="" class="widt"  height="auto"> <strong class="ml-3"> RTO</strong></span>
+                            <div class="form-row my-3 cvbb" v-if="step==3">
+                                <div class="col-md-12 my-2">
+                                    <label for="" class="labe" >
+                                        <input type="checkbox" v-model="rtoSameAsDelivery">
+                                        RTO Address Same As Delivery Address
+                                    </label>
+                                </div>
+                                <div class="form__group col-md-6 mb-3   col-12">                                  
+                                    <input type="text" v-model="rto_street_address"  class="form__input" id="inputZip" placeholder="Street Address">
+                                </div>
+                                <div class="form__group col-md-6 mb-3  col-12">
+                                    <input type="text" v-model="rto_city"  class="form__input" id="inputZip" placeholder="City/Town">
+                                </div>
+                                <div class="form__group  col-md-6 mb-3 col-12">
+                                    <input type="text" v-model="rto_state"  class="form__input" id="inputZip" placeholder="State">
+                                </div>
+                                <div class="form__group  col-md-6 mb-3  col-12">                                   
+                                    <input type="number" v-model="rto_post_code"  class="form__input" id="inputZip" placeholder="Pincode">
+                                </div>
+                               
+                            </div>
+                            
+                        </div>
       
-    <div class="col-md-9 col-12 p-0" style="margin:0 auto">
         
-        <p class="text-center pb-1"  style="color:red" v-if="message">{{message}}</p>
-        <div class="col-md-12 m-auto p-0 col-12">
-            <h1 class="font2 mb-4 mt-5 text-left" style="">Billing Details</h1>
-            <form class="text-left">
-        <div class="form-row text-left">
-            <div class="form-group col-md-6 col-6">
-            <label for="inputEmail4">First Name</label>
-            <input type="text" v-model="first_name" class="form-control" id="inputEmail4" placeholder="">
-            </div>
-            <div class="form-group col-md-6 col-6">
-            <label for="inputPassword4">Last Name</label>
-            <input type="text" v-model="last_name" class="form-control" id="inputPassword4" placeholder="">
-            </div>
-        </div>
-  
-    
-        <div class="form-group  ">
-            <label for="inputZip">Phone Number</label>
-            <input type="number" v-model="phone_number" class="form-control" id="inputZip">
-        </div>
-        <div class="form-group  ">
-            <label for="inputZip">Email Address</label>
-            <input type="email" v-model="email"  class="form-control" id="inputZip">
-        </div>
-        <h1 class="font2 mb-4 mt-5 text-left" style="">Delivery Details</h1>
-        <div class="form-group  ">
-            <label for="inputZip">Street Address</label>
-            <input type="text" v-model="street_address"  class="form-control" id="inputZip">
-        </div>
-        <div class="form-group  ">
-            <label for="inputZip">City/Town</label>
-            <input type="text" v-model="city"  class="form-control" id="inputZip">
-        </div>
-        <div class="row col-md-12 m-0 p-0">
-            <div class="form-group  col-md-6 m-0 p-0 ">
-                <label for="inputZip">State</label>
-                <input type="text" v-model="state"  class="form-control" id="inputZip">
-            </div>
-            <div class="form-group  col-md-6 cvb m-0 pr-0">
-                <label for="inputZip">Pincode</label>
-                <input type="number" v-model="post_code"  class="form-control" id="inputZip">
-            </div>
-        <h1 class="font2 mb-4 mt-5 text-left" style="">RTO Registration Details</h1>
-       <div class="col-md-12 m-0 p-0 my-2">
-            <label for="" >
-            <input type="checkbox" v-model="rtoSameAsDelivery">
-            RTO Address Same As Delivery Address
-        </label>
-       </div>
-        <div class="form-group col-md-12 mb-3 m-0 p-0  ">
-            <label for="inputZip">Street Address</label>
-            <input type="text" v-model="rto_street_address"  class="form-control" id="inputZip">
-        </div>
-        <div class="form-group col-md-12 m-0 p-0">
-            <label for="inputZip">City/Town</label>
-            <input type="text" v-model="rto_city"  class="form-control" id="inputZip">
-        </div>
-        <div class="row col-md-12 m-0 my-3 p-0">
-            <div class="form-group  col-md-6 m-0 p-0 ">
-            <label for="inputZip">State</label>
-            <input type="text" v-model="rto_state"  class="form-control" id="inputZip">
-        </div>
-        <div class="form-group  col-md-6 cvb  m-0 p-0 pl-3 pr-0">
-            <label for="inputZip"> Pincode</label>
-            <input type="number" v-model="rto_post_code"  class="form-control" id="inputZip">
-        </div>
-        </div>
-        </div>
-        </form>
-        </div>
-
-        <h1 class="font2 mb-4 mt-5 text-left" style="">Your Order</h1>
-        <table class="table table-bordered">
-            <thead>
-                <tr class="text-left">
-                <th scope="col">Product</th>
-                <th scope="col">Total</th>
-            
-                </tr>
-            </thead>
-            <tbody class="text-left">
-                <tr v-if="superdata">
-                    <th scope="row">{{cartdata[0].make_model}} {{cartdata[0].color}} {{cartdata[0].variant}} {{totalPrice | currency}}
-                       + Convenience Charge  {{convenienceAmount | currency}} (3%)
-                    </th>
-               
-        
-                    <td>{{checkOutPrice | currency}}</td>
-                    
-
-                </tr>
-
-                <!-- <tr>
-                    <th scope="row">Subtotal</th>
-                    <td>₹ {{cartdata.price}}</td>
-                </tr> -->
-<!-- 
-                <tr>
-                    <th scope="row">Total</th>
-                    <td>₹ {{cartdata.price}}</td>
-                </tr> -->
-
-            </tbody>
-        </table>
-        <div class="col-md-12 col-12 m-0 mt-4 p-3 mb-5 pb-5" style="background:#EBE9EB; border-radius:5px">
-            <div class="col-md-12 col-12 row mb-3">
-                <div class="col-md-6 m-0 p-0 text-left">
-                    <p class="m-0 p-0 font3"><span><i class="fa fa-dot-circle-o pr-3" style="color:blue" aria-hidden="true"></i></span>Credit Card/Debit Card/NetBanking </p>
+                    </div>
+              </div>
+          </div>
+          <div class="col-md-4 " >
+                <div class="col-md-12 m-3 p-3 " style="box-shadow: 0 1px 12px rgba(51,51,51,.12941)!important; border-radius:10px">
+                    <h1 class="font2  text-left" style=""> Order Details</h1>
+                    <div class="col-md-12">
+                        <img :src="cartdata[0].selectedItem.image"
+                        alt=""
+                        width="80%">
+                    </div>
+                    <table class="table table-bordered" style="box-shadow: 0 1px 12px rgba(51,51,51,.12941)!important; border-radius:10px">
+                        <thead>
+                            <tr class="text-left">
+                            <th scope="col">Product</th>
+                            <th scope="col">Total</th>
+                        
+                            </tr>
+                        </thead>
+                        <tbody class="text-left" >
+                            <tr >
+                                <th scope="row">{{cartdata[0].make_model}}  {{cartdata[0].variant}}  
+                                </th>
+                                <td>{{checkOutPrice - convenienceAmount | currency}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                <span v-if="booking_type"> Convenience Charge (3%) </span>
+                                <span v-else>(Booking Charge)</span>
+                                </th>
+                                <td>{{convenienceAmount | currency}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                <span v-if="booking_type"> Total</span>
+                                <span v-else>(Booking Charge)</span>
+                                </th>
+                                <td>{{checkOutPrice | currency}}</td>
+                            </tr>
+                            <!-- <tr>
+                                <th scope="row">Subtotal</th>
+                                <td>₹ {{cartdata.price}}</td>
+                            </tr> -->
+                            <!-- 
+                            <tr>
+                                <th scope="row">Total</th>
+                                <td>₹ {{cartdata.price}}</td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+                    <p style="color:red; font-size:12px" class="mb-3" v-if="!valid"> * Please fill all the fields.</p>
+                    <div class="col-md-12  text-center" @click="placeOrder" :disabled="!valid"  style="cursor:pointer;border:none; background:#4CAF50;border-color: #4caf50 !important;box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%); color:white;font-weight:500;letter-spacing:1px">
+                        <span><i class="fa fa-shopping-cart" aria-hidden="true" style="font-size:21px"></i></span>
+                        <button class="px-3 py-2 "  style="color:white;background:#4CAF50;border:none;font-size:18px; letter-spacing:1px"  ><strong>Place Order</strong></button>
+                    </div>
                 </div>
-                <div class="col-md-6 ghj text-left">
-                    <img src="https://cdn.razorpay.com/static/assets/logo/payment.svg" alt="Credit Card/Debit Card/NetBanking">
-                </div>   
-            </div>
-            <div class="col-md-12 p-2 mb-3" style="background:#DFDCDE">
-                <p class="text-left" style="color: #515151;font-size: .92em;">Pay securely by Credit or Debit card or Internet Banking through Razorpay.</p>
-            </div>
-            <hr>
-            <p class="text-left bnm" >Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our <span ><a href="https://razorpay.com/privacy/" style="color:#4E44D8;cursor:pointer !important;">Privacy Policy</a></span></p>
-            <div class="col-md-12 mt-4 text-center">
-                <p style="color:red" v-if="!valid">Please fill all the fields.</p>
-                <button class="p-2 " :disabled="!valid" style="border:none;border-radius:5px; background:#4E44D8; color:white;font-weight:500;letter-spacing:1px" @click="placeOrder">Place Order</button>
-            </div>
-        </div>
-    
-    </div>    
+                    
+          </div>
+      </div>
   </div>
 </template>
 
@@ -154,13 +173,20 @@ export default {
             rto_city:'',
             rto_state:'',
             rtoSameAsDelivery :false,
-            message:''
+            message:'',
+            booking_type:[],
+            step:1
         }
     },
  
 
     methods: {
-
+        next(){
+            this.step++
+        },
+        prev(){
+           this.step-- 
+        },
         rtoSameAsDeliveryTrigger(){
             if(this.rtoSameAsDelivery){
                 this.rto_street_address = this.street_address,
@@ -188,7 +214,10 @@ export default {
                 payment_status:1,
                 booking_status:1,
                 comment:'No comment Yet'
-            }).
+            },
+                        {
+                        headers: { 'Authorization': 'YwMiRtYxQpVcMsVy1w3Z9==' }
+                        }).
             then(()=> {
                 this.$router.push('/success/' + this.otr_order_id)
             })
@@ -201,7 +230,7 @@ export default {
             })
         },
         placeOrder(){
-            axios.post('https://cors-anywhere.herokuapp.com/https://backend-bikex.herokuapp.com/api/otr_purchase/generateOrder' , {
+            axios.post('https://backend-bikex.herokuapp.com/api/otr_purchase/generateOrder' , {
                 firstname: this.first_name,
                 lastname: this.last_name,
                 phone:this.phone_number,
@@ -221,6 +250,9 @@ export default {
                 add_ons:this.cartdata[0].addons,
                 vehicle_details: this.cartdata[0].selectedItem,
                 amount: this.checkOutPrice
+            },
+            {
+             headers: { 'Authorization': 'YwMiRtYxQpVcMsVy1w3Z9==' }
             }).
             then(response=> {
                 window.console.log(response.data)
@@ -266,10 +298,13 @@ export default {
                                 "color": "#ffb52f"
                             }
                         };
-                        this.$http.post('https://cors-anywhere.herokuapp.com/https://rzp_live_Vi238TQEagSN3x:c2ImBntiX8l4ZwHPTXfbJdx4@bikex.in/v1/orders',{
+                        this.$http.post('https://backend-bikex.herokuapp.com/api/rzp/createOrder',{
                             "amount":this.checkOutPrice * 100,
                             "currency":"INR",
                             "payment_capture":1
+                        },
+                        {
+                        headers: { 'Authorization': 'YwMiRtYxQpVcMsVy1w3Z9==' }
                         }).then((res)=>{
                             window.console.log(res)
                             this.razorpay_order_id = res.id
@@ -286,6 +321,9 @@ export default {
 created(){
     this.fetchDetail()
     this.superset = this.$route.params.value
+    if(this.$route.query){
+    this.booking_type = this.$route.query
+    }
      
      window.scrollTo({
       top: 0,
@@ -295,11 +333,11 @@ created(){
 },
 watch:{
     cartdata(){
-    //    this.superdata = 
-    //     this.cartdata.superset.filter(x=>{
-    //     return x.id == this.superset
+       this.superdata = 
+        this.cartdata.superset.filter(x=>{
+        return x.id == this.superset
 
-    //     })
+        })
     },
      rtoSameAsDelivery(){
             this.rtoSameAsDeliveryTrigger()
@@ -319,10 +357,32 @@ computed:{
         return Number(this.cartdata[0].selectedItem.price) + Number(addonsPrice)
     },
     convenienceAmount(){
-        return Math.round(0.03*this.totalPrice)
+        if(this.booking_type.booking_type == 'Book bike at rupees Rs. 1000'){
+        return 0
+      }
+      else if(this.booking_type.booking_type == 'book bike at rupees Rs. 20000'){
+        return 0
+      }
+      else if(this.booking_type.booking_type == 'book bike at rupees Rs. 30000'){
+        return 0
+      }else{
+        return  Math.round(0.03*this.totalPrice)
+      }
+       
     },
     checkOutPrice(){
+        if(this.booking_type.booking_type == 'Book bike at rupees Rs. 1000'){
+        return Number(1000)
+      }
+      else if(this.booking_type.booking_type == 'book bike at rupees Rs. 20000'){
+        return Number(20000)
+      }
+      else if(this.booking_type.booking_type == 'book bike at rupees Rs. 30000'){
+        return Number(30000)
+      }else{
         return Number(this.totalPrice) + Number(this.convenienceAmount)
+      }
+       
     },
     valid(){
         if(this.first_name && this.last_name && this.phone_number && this.email){
@@ -341,6 +401,43 @@ computed:{
 
 
 <style scoped>
+.widt{
+    width:4%
+}
+.cvbb{
+    margin-left:50px
+}
+.form__label {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  margin-left: 2rem;
+  margin-top: 0.7rem;
+  display: block;
+  transition: all 0.3s;
+  transform: translateY(0rem);
+}
+
+.form__input {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  font-size: 14px;
+  padding: 0.6rem 2rem;
+  border-radius: 0.2rem;
+  background-color: rgb(255, 255, 255);
+    border: 0.1px solid grey;
+  width: 100%;
+  display: block;
+
+  transition: all 0.3s;
+}
+
+.form__input:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translateY(-4rem);
+  transform: translateY(-4rem);
+  font-size: 10px;
+}
 a{
     color:#4E44D8 !important
 }
@@ -369,6 +466,16 @@ a{
  .ghj{
      text-align:center !important
  }
+ .cvbb{
+    margin-left:10px !important
+}
+.labe{
+    font-size:12px;
+    color:grey
+}
+ .vbnm{
+     padding-top: 25px;
+ }
  .bnm{
      font-size:14px
  }
@@ -380,5 +487,8 @@ a{
  .cvb{
      padding-left: 0  !important;
  }
+ .widt{
+    width:15%
+}
 }
 </style>
