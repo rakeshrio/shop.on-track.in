@@ -67,7 +67,11 @@ export default new Vuex.Store({
     },
 
     getCompareData({commit}){
-      var x = JSON.parse(localStorage.compare)
+      if(localStorage.compare){
+        var x = JSON.parse(localStorage.compare)
+      }else{
+        x=[]
+      } 
       commit('COMPARE', x)
     },
 

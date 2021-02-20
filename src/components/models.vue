@@ -7,7 +7,6 @@
 
       <!-- <h4 class="heading-title pb-2">Scooters</h4>
       <h4 class="heading-title">Bikes</h4>-->
-      {{compareData}}
       <div class="col-md-12 col-12 row m-0 p-0 my-4">
         <div
           class="col-md-3 col-6 m-0 p-0 pr-4 pb-4"
@@ -72,9 +71,10 @@
               <!-- <h2 class="price pb-1"></h2> -->
               <div class="col-md-12 d-flex justify-content-between">
                 <!-- <button class="butn px-3 py-2 " @click="goToCheckout(data._id)">Buy Now</button> -->
-                <p class="labels" @click="compare(data)">COMPARE</p>
-                <!-- {{addedToCompare(data)}} -->
-                <!-- <p v-else>Already Added</p> -->
+                <!-- <p class="labels" >COMPARE</p> -->
+                <button v-if="!addedToCompare(data._id)" @click="compare(data)" class="btn btn-outline-secondary">Compare</button>
+                
+                <button v-else disabled class="btn btn-outline-primary">Added to Compare</button>
               </div>
             </div>
           </div>
@@ -110,11 +110,15 @@ export default {
   },
   watch: {},
   methods: {
-    addedToCompare(){
-      var datas = this.compareData.forEach(x=>{
-        return x
+    addedToCompare(id){
+      var datas = this.compareData.filter(x=>{
+        return x._id == id
       })
-       return datas
+      if(datas.length > 0){
+        return true
+      }else{
+        return false
+      }
     },
     check(data) {
       var x = _.uniqBy(data, "color");
@@ -159,14 +163,16 @@ export default {
       this.$router.push("/display/" + id);
     },
     compare(data) {
-      if (this.compareData.length <= 3) {
+      if (this.compareData.length < 3) {
         if (this.compareData) {
           var compare = this.compareData;
         } else {
           compare = [];
         }
         compare.push(data);
+        localStorage.setItem("compare", JSON.stringify(compare))
         this.$store.dispatch('getCompareData')
+        this.apply()
       } else {
         alert("You can add only three data");
         this.$router.push("/compare")
@@ -178,11 +184,11 @@ export default {
       return this.$store.state.currentStateModel;
     },
     compareData() {
-      if(this.$store.state.compare.length>0)
-      return JSON.parse(this.$store.state.compare);
-      else
-      return []
-      // return this.$store.state.compare
+      // if(this.$store.state.compare.length>0)
+      // return JSON.parse(this.$store.state.compare);
+      // else
+      // return []
+      return this.$store.state.compare
     },
   },
 };
